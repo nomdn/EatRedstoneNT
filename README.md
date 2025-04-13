@@ -1,25 +1,19 @@
 # EatRedstoneNT
 
-#### Description
+#### 介绍
 基于qfluentwidgets重构的赤石工具箱
 更舒服的赤石体验👍👍👍
 
-#### Software Architecture
-Software architecture description
+
 
 #### Installation
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1 下载源码
+2 pyinstaller封装
+3 除了主程序外的程序放到/apps目录
+4 图片资源放在/icons目录
 
-#### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
+#### 参与贡献
 
 1.  Fork the repository
 2.  Create Feat_xxx branch
@@ -27,11 +21,4 @@ Software architecture description
 4.  Create Pull Request
 
 
-#### Gitee Feature
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
