@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>赤石工具箱</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../pythonstudy/python3.8/eat-redstone-nt/icons/biaoqing.png</normaloff>../../pythonstudy/python3.8/eat-redstone-nt/icons/biaoqing.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>0</y>
+      <width>721</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="home">
+     <widget class="SmoothScrollArea" name="SmoothScrollArea">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>721</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>719</width>
+         <height>609</height>
+        </rect>
+       </property>
+       <widget class="TitleLabel" name="TitleLabel_2">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>10</y>
+          <width>691</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>我们非常不欢迎您使用该工具箱</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="redstonepage">
+     <widget class="SmoothScrollArea" name="SmoothScrollArea_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>721</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>719</width>
+         <height>1000</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>1000</height>
+        </size>
+       </property>
+       <widget class="SimpleCardWidget" name="SimpleCardWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>711</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>161</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>21</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>看片神器</string>
+         </property>
+        </widget>
+        <widget class="CaptionLabel" name="CaptionLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>431</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>嗨，我是颠佬，这是我的看片神器，免费看片是我的秘密武器</string>
+         </property>
+        </widget>
+        <widget class="PushButton" name="pian_1">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>111</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>启动看片神器</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="SimpleCardWidget" name="SimpleCardWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>190</y>
+          <width>711</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>591</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>21</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Python 3.8 Shell</string>
+         </property>
+        </widget>
+        <widget class="CaptionLabel" name="CaptionLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>431</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>&quot;Never Gonna Give You Up&quot;</string>
+         </property>
+        </widget>
+        <widget class="PushButton" name="shell">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>111</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>启动诈骗神器</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="SimpleCardWidget" name="SimpleCardWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>370</y>
+          <width>711</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>231</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>21</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>记你两分钟</string>
+         </property>
+        </widget>
+        <widget class="CaptionLabel" name="CaptionLabel_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>431</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>世界上最简单的倒计时</string>
+         </property>
+        </widget>
+        <widget class="PushButton" name="dao_time">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>111</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>开启倒计时</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="toolspage">
+     <widget class="SmoothScrollArea" name="SmoothScrollArea_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>721</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>719</width>
+         <height>1000</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>1000</height>
+        </size>
+       </property>
+       <widget class="SimpleCardWidget" name="SimpleCardWidget_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>711</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel_9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>211</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>21</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>本地视频转换器</string>
+         </property>
+        </widget>
+        <widget class="CaptionLabel" name="CaptionLabel_8">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>431</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Minecraft AE</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>打算做</string>
+         </property>
+        </widget>
+        <widget class="PushButton" name="start_ffmpeg">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>171</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>启动MDN ffmpeg GUI</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page">
+     <widget class="TitleLabel" name="TitleLabel_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>161</width>
+        <height>38</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>不常用设置</string>
+      </property>
+     </widget>
+     <widget class="SimpleCardWidget" name="SimpleCardWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>711</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <widget class="SubtitleLabel" name="SubtitleLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>141</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>神经BGM选择</string>
+       </property>
+      </widget>
+      <widget class="ComboBox" name="music">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>20</y>
+         <width>131</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>纯神经</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>CardWidget</class>
+   <extends>QFrame</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SimpleCardWidget</class>
+   <extends>CardWidget</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SmoothScrollArea</class>
+   <extends>QScrollArea</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CaptionLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>SubtitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

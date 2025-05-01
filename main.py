@@ -1,26 +1,66 @@
 import os
 import sys
 
+
 from PyQt5.QtCore import pyqtSlot, QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow,QStackedWidget
-import multiprocessing
+
+import pygame
+import os
 
 
-import webbrowser
+
+
 import subprocess
 
 from mainwindow import Ui_MainWindow  # 确保main.py在同一目录下
+
+from apps import soundplayer
 wherepython = sys.executable
+
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
     def __init__(self):
+
         super().__init__()
         self.setupUi(self)  # 初始化UI
+        running = True
+
+
+        def play(sound):
+
+            pygame.mixer.init()
+            if sound =="伴奏神经":
+                pygame.mixer.stop()
+                wheredir = os.path.dirname(os.path.abspath(__file__))
+                music1 = pygame.mixer.Sound(f'{wheredir}/apps/sounds/1.MP3')
+                music1.play()
+            elif sound =="完整神经":
+                pygame.mixer.stop()
+                wheredir = os.path.dirname(os.path.abspath(__file__))
+                music3 = pygame.mixer.Sound(f'{wheredir}/apps/sounds/3.MP3')
+                music3.play()
+
+
+            elif sound =="纯神经":
+                pygame.mixer.stop()
+                wheredir = os.path.dirname(os.path.abspath(__file__))
+                music2 = pygame.mixer.Sound(f'{wheredir}/apps/sounds/2.MP3')
+                music2.play()
+
+
+
+
         self.pian_1.clicked.connect(self.on_pian_1_clicked)
         self.shell.clicked.connect(self.on_pian_1_clicked)
         self.start_ffmpeg.clicked.connect(self.on_pian_1_clicked)
         self.dao_time.clicked.connect(self.on_pian_1_clicked)
+        self.music.currentIndexChanged.connect(lambda index: play(self.music.currentText()))
+
+
+
 
 
 
@@ -43,6 +83,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dao_time.clicked.disconnect()
         # 然后重新连接
         self.dao_time.clicked.connect(self.on_dao_time_clicked)
+
+
 
     @pyqtSlot()
     def on_shell_clicked(self):
@@ -74,8 +116,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
     mainWindow.show()
+
     sys.exit(app.exec_())
+

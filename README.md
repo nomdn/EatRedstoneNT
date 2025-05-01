@@ -6,19 +6,17 @@
 
 
 
-#### Installation
+#### 安装方法
 
-1 下载源码
-2 pyinstaller封装
-3 除了主程序外的程序放到/apps目录
-4 图片资源放在/icons目录
+1 下载源码<br>
+2 pip install -r requirements.txt<br>
+3 python main.py
 
-#### 参与贡献
+#### 注意事项
+1 linux操作系统在使用该工具时可能需要python3-xlib（我可能记错了，报错说什么就pip，apt，yum，dnf，pacman，rpm什么吧）<br>
+2 python解释器版本建议使用cpython3.8
 
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+
 
 
 
