@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from Demos.win32ts_logoff_disconnected import username
+
 # Form implementation generated from reading ui file 'untitled.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
