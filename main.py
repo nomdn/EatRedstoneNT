@@ -15,7 +15,7 @@ import subprocess
 
 from mainwindow import Ui_MainWindow  # 确保main.py在同一目录下
 
-from apps import soundplayer
+
 wherepython = sys.executable
 
 
