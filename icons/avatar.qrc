@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="mdn">
+    <file>mdn.webp</file>
+  </qresource>
+</RCC>

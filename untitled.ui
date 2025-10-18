@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>802</width>
-    <height>603</height>
+    <width>1124</width>
+    <height>669</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,14 +21,14 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>0</x>
       <y>0</y>
-      <width>721</width>
-      <height>601</height>
+      <width>1121</width>
+      <height>681</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="SmoothScrollArea" name="SmoothScrollArea">
@@ -36,8 +36,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>721</width>
-        <height>611</height>
+        <width>1131</width>
+        <height>671</height>
        </rect>
       </property>
       <property name="widgetResizable">
@@ -48,22 +48,87 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>719</width>
-         <height>609</height>
+         <width>1129</width>
+         <height>669</height>
         </rect>
        </property>
-       <widget class="TitleLabel" name="TitleLabel_2">
+       <widget class="PixmapLabel" name="PixmapLabel">
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>10</y>
-          <width>691</width>
-          <height>181</height>
+          <x>-40</x>
+          <y>0</y>
+          <width>1171</width>
+          <height>681</height>
          </rect>
         </property>
-        <property name="text">
-         <string>我们非常不欢迎您使用该工具箱</string>
+        <property name="styleSheet">
+         <string notr="true">border-image:url(:/background/DAILYBING.COM-ZH-CN-20240105-UHD.JPG)</string>
         </property>
+       </widget>
+       <widget class="HeaderCardWidget" name="HeaderCardWidget">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>470</y>
+          <width>841</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel_9">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>50</y>
+           <width>201</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>16</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>开发者:Nomdn</string>
+         </property>
+        </widget>
+        <widget class="TitleLabel" name="TitleLabel_10">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>90</y>
+           <width>201</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>11</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>使用GPL 3.0协议开源</string>
+         </property>
+        </widget>
+        <widget class="AvatarWidget" name="AvatarWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>96</width>
+           <height>96</height>
+          </rect>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::DefaultContextMenu</enum>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -74,9 +139,12 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>721</width>
-        <height>611</height>
+        <width>1131</width>
+        <height>671</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="widgetResizable">
        <bool>true</bool>
@@ -86,7 +154,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>719</width>
+         <width>1129</width>
          <height>1000</height>
         </rect>
        </property>
@@ -96,78 +164,13 @@
          <height>1000</height>
         </size>
        </property>
-       <widget class="SimpleCardWidget" name="SimpleCardWidget">
+       <widget class="ElevatedCardWidget" name="ElevatedCardWidget_2">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>70</x>
           <y>10</y>
-          <width>711</width>
-          <height>171</height>
-         </rect>
-        </property>
-        <widget class="TitleLabel" name="TitleLabel">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>161</width>
-           <height>61</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Minecraft AE</family>
-           <pointsize>21</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>看片神器</string>
-         </property>
-        </widget>
-        <widget class="CaptionLabel" name="CaptionLabel">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>60</y>
-           <width>431</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Minecraft AE</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>嗨，我是颠佬，这是我的看片神器，免费看片是我的秘密武器</string>
-         </property>
-        </widget>
-        <widget class="PushButton" name="pian_1">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>110</y>
-           <width>111</width>
-           <height>32</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>启动看片神器</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="SimpleCardWidget" name="SimpleCardWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>190</y>
-          <width>711</width>
-          <height>171</height>
+          <width>241</width>
+          <height>141</height>
          </rect>
         </property>
         <widget class="TitleLabel" name="TitleLabel_3">
@@ -175,14 +178,14 @@
           <rect>
            <x>10</x>
            <y>0</y>
-           <width>591</width>
+           <width>221</width>
            <height>61</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Minecraft AE</family>
-           <pointsize>21</pointsize>
+           <family>微软雅黑</family>
+           <pointsize>16</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -195,15 +198,15 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>60</y>
-           <width>431</width>
+           <y>50</y>
+           <width>151</width>
            <height>41</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Minecraft AE</family>
-           <pointsize>12</pointsize>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -216,23 +219,334 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>110</y>
+           <y>90</y>
            <width>111</width>
            <height>32</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">/* ==================== 基础按钮样式 ==================== */
+/* 默认状态：青色背景，白色文字，保留圆角和边框 */
+PushButton, ToolButton, ToggleButton, ToggleToolButton,
+PrimaryPushButton, PrimaryToolButton {
+    color: white;
+    background-color: #4ca0af;
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+    border-radius: 5px;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+/* 悬停状态：背景保持青色，文字变为黑色 */
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,
+PrimaryPushButton:hover, PrimaryToolButton:hover {
+    
+    background-color: #45a049; /* 强制背景色不变 */
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+}
+
+/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */
+PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,
+PrimaryPushButton:pressed, PrimaryToolButton:pressed {
+    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */
+    background-color: #009faa; /* 强制背景色不变 */
+    border-bottom: 1px solid #007780;
+}
+
+/* 禁用状态：背景变灰，文字变灰 */
+PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,
+PrimaryPushButton:disabled, PrimaryToolButton:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 特殊按钮的内边距调整 ==================== */
+ToolButton {
+    padding: 5px 9px 6px 8px;
+}
+
+PushButton[isPlaceholderText=true] {
+    color: rgba(0, 0, 0, 0.6063);
+}
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+DropDownToolButton, PrimaryDropDownToolButton {
+    padding: 5px 31px 6px 8px;
+}
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+/* ==================== 切换按钮的选中状态 ==================== */
+/* 选中状态默认就是青色，所以文字保持白色 */
+ToggleButton:checked,
+ToggleToolButton:checked {
+    color: white;
+    background-color: #009faa;
+    border: 1px solid #00a7b3;
+    border-bottom: 1px solid #007780;
+}
+
+/* 选中状态下悬停，文字变为黑色 */
+ToggleButton:checked:hover,
+ToggleToolButton:checked:hover {
+    color: black;
+    background-color: #009faa;
+}
+
+/* 选中状态下按下，文字变为深黑色 */
+ToggleButton:checked:pressed,
+ToggleToolButton:checked:pressed {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #009faa;
+}
+
+/* 选中状态下禁用 */
+ToggleButton:checked:disabled,
+ToggleToolButton:checked:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==================== 分割按钮 ==================== */
+SplitDropButton,
+PrimarySplitDropButton {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#splitPushButton,
+#splitToolButton,
+#primarySplitPushButton,
+#primarySplitToolButton {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#splitPushButton:pressed,
+#splitToolButton:pressed,
+SplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+PrimarySplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+#primarySplitPushButton, #primarySplitToolButton {
+    border-right: 1px solid #00a7b3;
+}
+
+#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+/* ==================== 其他控件（保留原始样式）==================== */
+HyperlinkButton {
+    padding: 6px 12px 6px 12px;
+    color: #009faa;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+HyperlinkButton[hasIcon=false] {
+    padding: 6px 12px 6px 12px;
+}
+
+HyperlinkButton[hasIcon=true] {
+    padding: 6px 12px 6px 36px;
+}
+
+HyperlinkButton:hover {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 10);
+    border: none;
+}
+
+HyperlinkButton:pressed {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+HyperlinkButton:disabled {
+    color: rgba(0, 0, 0, 0.43);
+    background-color: transparent;
+    border: none;
+}
+
+RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    color: black;
+}
+
+RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #999999;
+    background-color: rgba(0, 0, 0, 5);
+    margin-right: 4px;
+}
+
+RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 224, 223),
+            stop:1 rgb(225, 224, 223));
+}
+
+RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.6 rgb(255, 255, 255),
+            stop:0.7 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton:disabled {
+    color: rgba(0, 0, 0, 110);
+}
+
+RadioButton::indicator:disabled {
+    border: 2px solid #bbbbbb;
+    background-color: transparent;
+}
+
+RadioButton::indicator:disabled:checked {
+    border: none;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgba(0, 0, 0, 0.2169),
+            stop:1 rgba(0, 0, 0, 0.2169));
+}
+
+TransparentToolButton,
+TransparentToggleToolButton,
+TransparentDropDownToolButton,
+TransparentPushButton,
+TransparentDropDownPushButton,
+TransparentTogglePushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+TransparentToolButton:hover,
+TransparentToggleToolButton:hover,
+TransparentDropDownToolButton:hover,
+TransparentPushButton:hover,
+TransparentDropDownPushButton:hover,
+TransparentTogglePushButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+TransparentToolButton:pressed,
+TransparentToggleToolButton:pressed,
+TransparentDropDownToolButton:pressed,
+TransparentPushButton:pressed,
+TransparentDropDownPushButton:pressed,
+TransparentTogglePushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+TransparentToolButton:disabled,
+TransparentToggleToolButton:disabled,
+TransparentDropDownToolButton:disabled,
+TransparentPushButton:disabled,
+TransparentDropDownPushButton:disabled,
+TransparentTogglePushButton:disabled {
+    background-color: transparent;
+    border: none;
+}
+
+PillPushButton,
+PillPushButton:hover,
+PillPushButton:pressed,
+PillPushButton:disabled,
+PillPushButton:checked,
+PillPushButton:checked:hover,
+PillPushButton:checked:pressed,
+PillPushButton:disabled:checked,
+PillToolButton,
+PillToolButton:hover,
+PillToolButton:pressed,
+PillToolButton:disabled,
+PillToolButton:checked,
+PillToolButton:checked:hover,
+PillToolButton:checked:pressed,
+PillToolButton:disabled:checked {
+    background-color: transparent;
+    border: none;
+}
+</string>
          </property>
          <property name="text">
           <string>启动诈骗神器</string>
          </property>
         </widget>
        </widget>
-       <widget class="SimpleCardWidget" name="SimpleCardWidget_3">
+       <widget class="ElevatedCardWidget" name="ElevatedCardWidget_3">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>370</y>
-          <width>711</width>
-          <height>171</height>
+          <x>330</x>
+          <y>10</y>
+          <width>241</width>
+          <height>141</height>
          </rect>
         </property>
         <widget class="TitleLabel" name="TitleLabel_4">
@@ -246,8 +560,8 @@
          </property>
          <property name="font">
           <font>
-           <family>Minecraft AE</family>
-           <pointsize>21</pointsize>
+           <family>微软雅黑</family>
+           <pointsize>18</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -260,15 +574,15 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>60</y>
-           <width>431</width>
+           <y>50</y>
+           <width>131</width>
            <height>41</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Minecraft AE</family>
-           <pointsize>12</pointsize>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -281,13 +595,1076 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>110</y>
+           <y>90</y>
            <width>111</width>
            <height>32</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">/* ==================== 基础按钮样式 ==================== */
+/* 默认状态：青色背景，白色文字，保留圆角和边框 */
+PushButton, ToolButton, ToggleButton, ToggleToolButton,
+PrimaryPushButton, PrimaryToolButton {
+    color: white;
+    background-color: #4ca0af;
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+    border-radius: 5px;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+/* 悬停状态：背景保持青色，文字变为黑色 */
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,
+PrimaryPushButton:hover, PrimaryToolButton:hover {
+    
+    background-color: #45a049; /* 强制背景色不变 */
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+}
+
+/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */
+PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,
+PrimaryPushButton:pressed, PrimaryToolButton:pressed {
+    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */
+    background-color: #009faa; /* 强制背景色不变 */
+    border-bottom: 1px solid #007780;
+}
+
+/* 禁用状态：背景变灰，文字变灰 */
+PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,
+PrimaryPushButton:disabled, PrimaryToolButton:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 特殊按钮的内边距调整 ==================== */
+ToolButton {
+    padding: 5px 9px 6px 8px;
+}
+
+PushButton[isPlaceholderText=true] {
+    color: rgba(0, 0, 0, 0.6063);
+}
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+DropDownToolButton, PrimaryDropDownToolButton {
+    padding: 5px 31px 6px 8px;
+}
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+/* ==================== 切换按钮的选中状态 ==================== */
+/* 选中状态默认就是青色，所以文字保持白色 */
+ToggleButton:checked,
+ToggleToolButton:checked {
+    color: white;
+    background-color: #009faa;
+    border: 1px solid #00a7b3;
+    border-bottom: 1px solid #007780;
+}
+
+/* 选中状态下悬停，文字变为黑色 */
+ToggleButton:checked:hover,
+ToggleToolButton:checked:hover {
+    color: black;
+    background-color: #009faa;
+}
+
+/* 选中状态下按下，文字变为深黑色 */
+ToggleButton:checked:pressed,
+ToggleToolButton:checked:pressed {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #009faa;
+}
+
+/* 选中状态下禁用 */
+ToggleButton:checked:disabled,
+ToggleToolButton:checked:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==================== 分割按钮 ==================== */
+SplitDropButton,
+PrimarySplitDropButton {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#splitPushButton,
+#splitToolButton,
+#primarySplitPushButton,
+#primarySplitToolButton {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#splitPushButton:pressed,
+#splitToolButton:pressed,
+SplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+PrimarySplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+#primarySplitPushButton, #primarySplitToolButton {
+    border-right: 1px solid #00a7b3;
+}
+
+#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+/* ==================== 其他控件（保留原始样式）==================== */
+HyperlinkButton {
+    padding: 6px 12px 6px 12px;
+    color: #009faa;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+HyperlinkButton[hasIcon=false] {
+    padding: 6px 12px 6px 12px;
+}
+
+HyperlinkButton[hasIcon=true] {
+    padding: 6px 12px 6px 36px;
+}
+
+HyperlinkButton:hover {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 10);
+    border: none;
+}
+
+HyperlinkButton:pressed {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+HyperlinkButton:disabled {
+    color: rgba(0, 0, 0, 0.43);
+    background-color: transparent;
+    border: none;
+}
+
+RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    color: black;
+}
+
+RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #999999;
+    background-color: rgba(0, 0, 0, 5);
+    margin-right: 4px;
+}
+
+RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 224, 223),
+            stop:1 rgb(225, 224, 223));
+}
+
+RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.6 rgb(255, 255, 255),
+            stop:0.7 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton:disabled {
+    color: rgba(0, 0, 0, 110);
+}
+
+RadioButton::indicator:disabled {
+    border: 2px solid #bbbbbb;
+    background-color: transparent;
+}
+
+RadioButton::indicator:disabled:checked {
+    border: none;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgba(0, 0, 0, 0.2169),
+            stop:1 rgba(0, 0, 0, 0.2169));
+}
+
+TransparentToolButton,
+TransparentToggleToolButton,
+TransparentDropDownToolButton,
+TransparentPushButton,
+TransparentDropDownPushButton,
+TransparentTogglePushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+TransparentToolButton:hover,
+TransparentToggleToolButton:hover,
+TransparentDropDownToolButton:hover,
+TransparentPushButton:hover,
+TransparentDropDownPushButton:hover,
+TransparentTogglePushButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+TransparentToolButton:pressed,
+TransparentToggleToolButton:pressed,
+TransparentDropDownToolButton:pressed,
+TransparentPushButton:pressed,
+TransparentDropDownPushButton:pressed,
+TransparentTogglePushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+TransparentToolButton:disabled,
+TransparentToggleToolButton:disabled,
+TransparentDropDownToolButton:disabled,
+TransparentPushButton:disabled,
+TransparentDropDownPushButton:disabled,
+TransparentTogglePushButton:disabled {
+    background-color: transparent;
+    border: none;
+}
+
+PillPushButton,
+PillPushButton:hover,
+PillPushButton:pressed,
+PillPushButton:disabled,
+PillPushButton:checked,
+PillPushButton:checked:hover,
+PillPushButton:checked:pressed,
+PillPushButton:disabled:checked,
+PillToolButton,
+PillToolButton:hover,
+PillToolButton:pressed,
+PillToolButton:disabled,
+PillToolButton:checked,
+PillToolButton:checked:hover,
+PillToolButton:checked:pressed,
+PillToolButton:disabled:checked {
+    background-color: transparent;
+    border: none;
+}
+</string>
+         </property>
          <property name="text">
           <string>开启倒计时</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="ElevatedCardWidget" name="ElevatedCardWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>10</y>
+          <width>241</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel_6">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>231</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>18</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>柠檬小助手</string>
+         </property>
+        </widget>
+        <widget class="CaptionLabel" name="CaptionLabel_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>131</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>佳豪装b神器</string>
+         </property>
+        </widget>
+        <widget class="PushButton" name="lh_run">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>111</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">/* ==================== 基础按钮样式 ==================== */
+/* 默认状态：青色背景，白色文字，保留圆角和边框 */
+PushButton, ToolButton, ToggleButton, ToggleToolButton,
+PrimaryPushButton, PrimaryToolButton {
+    color: white;
+    background-color: #4ca0af;
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+    border-radius: 5px;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+/* 悬停状态：背景保持青色，文字变为黑色 */
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,
+PrimaryPushButton:hover, PrimaryToolButton:hover {
+    
+    background-color: #45a049; /* 强制背景色不变 */
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+}
+
+/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */
+PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,
+PrimaryPushButton:pressed, PrimaryToolButton:pressed {
+    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */
+    background-color: #009faa; /* 强制背景色不变 */
+    border-bottom: 1px solid #007780;
+}
+
+/* 禁用状态：背景变灰，文字变灰 */
+PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,
+PrimaryPushButton:disabled, PrimaryToolButton:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 特殊按钮的内边距调整 ==================== */
+ToolButton {
+    padding: 5px 9px 6px 8px;
+}
+
+PushButton[isPlaceholderText=true] {
+    color: rgba(0, 0, 0, 0.6063);
+}
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+DropDownToolButton, PrimaryDropDownToolButton {
+    padding: 5px 31px 6px 8px;
+}
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+/* ==================== 切换按钮的选中状态 ==================== */
+/* 选中状态默认就是青色，所以文字保持白色 */
+ToggleButton:checked,
+ToggleToolButton:checked {
+    color: white;
+    background-color: #009faa;
+    border: 1px solid #00a7b3;
+    border-bottom: 1px solid #007780;
+}
+
+/* 选中状态下悬停，文字变为黑色 */
+ToggleButton:checked:hover,
+ToggleToolButton:checked:hover {
+    color: black;
+    background-color: #009faa;
+}
+
+/* 选中状态下按下，文字变为深黑色 */
+ToggleButton:checked:pressed,
+ToggleToolButton:checked:pressed {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #009faa;
+}
+
+/* 选中状态下禁用 */
+ToggleButton:checked:disabled,
+ToggleToolButton:checked:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==================== 分割按钮 ==================== */
+SplitDropButton,
+PrimarySplitDropButton {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#splitPushButton,
+#splitToolButton,
+#primarySplitPushButton,
+#primarySplitToolButton {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#splitPushButton:pressed,
+#splitToolButton:pressed,
+SplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+PrimarySplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+#primarySplitPushButton, #primarySplitToolButton {
+    border-right: 1px solid #00a7b3;
+}
+
+#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+/* ==================== 其他控件（保留原始样式）==================== */
+HyperlinkButton {
+    padding: 6px 12px 6px 12px;
+    color: #009faa;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+HyperlinkButton[hasIcon=false] {
+    padding: 6px 12px 6px 12px;
+}
+
+HyperlinkButton[hasIcon=true] {
+    padding: 6px 12px 6px 36px;
+}
+
+HyperlinkButton:hover {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 10);
+    border: none;
+}
+
+HyperlinkButton:pressed {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+HyperlinkButton:disabled {
+    color: rgba(0, 0, 0, 0.43);
+    background-color: transparent;
+    border: none;
+}
+
+RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    color: black;
+}
+
+RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #999999;
+    background-color: rgba(0, 0, 0, 5);
+    margin-right: 4px;
+}
+
+RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 224, 223),
+            stop:1 rgb(225, 224, 223));
+}
+
+RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.6 rgb(255, 255, 255),
+            stop:0.7 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton:disabled {
+    color: rgba(0, 0, 0, 110);
+}
+
+RadioButton::indicator:disabled {
+    border: 2px solid #bbbbbb;
+    background-color: transparent;
+}
+
+RadioButton::indicator:disabled:checked {
+    border: none;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgba(0, 0, 0, 0.2169),
+            stop:1 rgba(0, 0, 0, 0.2169));
+}
+
+TransparentToolButton,
+TransparentToggleToolButton,
+TransparentDropDownToolButton,
+TransparentPushButton,
+TransparentDropDownPushButton,
+TransparentTogglePushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+TransparentToolButton:hover,
+TransparentToggleToolButton:hover,
+TransparentDropDownToolButton:hover,
+TransparentPushButton:hover,
+TransparentDropDownPushButton:hover,
+TransparentTogglePushButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+TransparentToolButton:pressed,
+TransparentToggleToolButton:pressed,
+TransparentDropDownToolButton:pressed,
+TransparentPushButton:pressed,
+TransparentDropDownPushButton:pressed,
+TransparentTogglePushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+TransparentToolButton:disabled,
+TransparentToggleToolButton:disabled,
+TransparentDropDownToolButton:disabled,
+TransparentPushButton:disabled,
+TransparentDropDownPushButton:disabled,
+TransparentTogglePushButton:disabled {
+    background-color: transparent;
+    border: none;
+}
+
+PillPushButton,
+PillPushButton:hover,
+PillPushButton:pressed,
+PillPushButton:disabled,
+PillPushButton:checked,
+PillPushButton:checked:hover,
+PillPushButton:checked:pressed,
+PillPushButton:disabled:checked,
+PillToolButton,
+PillToolButton:hover,
+PillToolButton:pressed,
+PillToolButton:disabled,
+PillToolButton:checked,
+PillToolButton:checked:hover,
+PillToolButton:checked:pressed,
+PillToolButton:disabled:checked {
+    background-color: transparent;
+    border: none;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>开始装b</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="ElevatedCardWidget" name="ElevatedCardWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>850</x>
+          <y>10</y>
+          <width>241</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <widget class="TitleLabel" name="TitleLabel_7">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>231</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>18</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>获取一张色图</string>
+         </property>
+        </widget>
+        <widget class="CaptionLabel" name="CaptionLabel_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>141</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>改自我的另外一个项目</string>
+         </property>
+        </widget>
+        <widget class="PushButton" name="deer_pipe">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>111</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">/* ==================== 基础按钮样式 ==================== */
+/* 默认状态：青色背景，白色文字，保留圆角和边框 */
+PushButton, ToolButton, ToggleButton, ToggleToolButton,
+PrimaryPushButton, PrimaryToolButton {
+    color: white;
+    background-color: #4ca0af;
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+    border-radius: 5px;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+/* 悬停状态：背景保持青色，文字变为黑色 */
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,
+PrimaryPushButton:hover, PrimaryToolButton:hover {
+    
+    background-color: #45a049; /* 强制背景色不变 */
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+}
+
+/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */
+PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,
+PrimaryPushButton:pressed, PrimaryToolButton:pressed {
+    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */
+    background-color: #009faa; /* 强制背景色不变 */
+    border-bottom: 1px solid #007780;
+}
+
+/* 禁用状态：背景变灰，文字变灰 */
+PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,
+PrimaryPushButton:disabled, PrimaryToolButton:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 特殊按钮的内边距调整 ==================== */
+ToolButton {
+    padding: 5px 9px 6px 8px;
+}
+
+PushButton[isPlaceholderText=true] {
+    color: rgba(0, 0, 0, 0.6063);
+}
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+DropDownToolButton, PrimaryDropDownToolButton {
+    padding: 5px 31px 6px 8px;
+}
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+/* ==================== 切换按钮的选中状态 ==================== */
+/* 选中状态默认就是青色，所以文字保持白色 */
+ToggleButton:checked,
+ToggleToolButton:checked {
+    color: white;
+    background-color: #009faa;
+    border: 1px solid #00a7b3;
+    border-bottom: 1px solid #007780;
+}
+
+/* 选中状态下悬停，文字变为黑色 */
+ToggleButton:checked:hover,
+ToggleToolButton:checked:hover {
+    color: black;
+    background-color: #009faa;
+}
+
+/* 选中状态下按下，文字变为深黑色 */
+ToggleButton:checked:pressed,
+ToggleToolButton:checked:pressed {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #009faa;
+}
+
+/* 选中状态下禁用 */
+ToggleButton:checked:disabled,
+ToggleToolButton:checked:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==================== 分割按钮 ==================== */
+SplitDropButton,
+PrimarySplitDropButton {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#splitPushButton,
+#splitToolButton,
+#primarySplitPushButton,
+#primarySplitToolButton {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#splitPushButton:pressed,
+#splitToolButton:pressed,
+SplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+PrimarySplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+#primarySplitPushButton, #primarySplitToolButton {
+    border-right: 1px solid #00a7b3;
+}
+
+#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+/* ==================== 其他控件（保留原始样式）==================== */
+HyperlinkButton {
+    padding: 6px 12px 6px 12px;
+    color: #009faa;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+HyperlinkButton[hasIcon=false] {
+    padding: 6px 12px 6px 12px;
+}
+
+HyperlinkButton[hasIcon=true] {
+    padding: 6px 12px 6px 36px;
+}
+
+HyperlinkButton:hover {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 10);
+    border: none;
+}
+
+HyperlinkButton:pressed {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+HyperlinkButton:disabled {
+    color: rgba(0, 0, 0, 0.43);
+    background-color: transparent;
+    border: none;
+}
+
+RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    color: black;
+}
+
+RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #999999;
+    background-color: rgba(0, 0, 0, 5);
+    margin-right: 4px;
+}
+
+RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 224, 223),
+            stop:1 rgb(225, 224, 223));
+}
+
+RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.6 rgb(255, 255, 255),
+            stop:0.7 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton:disabled {
+    color: rgba(0, 0, 0, 110);
+}
+
+RadioButton::indicator:disabled {
+    border: 2px solid #bbbbbb;
+    background-color: transparent;
+}
+
+RadioButton::indicator:disabled:checked {
+    border: none;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgba(0, 0, 0, 0.2169),
+            stop:1 rgba(0, 0, 0, 0.2169));
+}
+
+TransparentToolButton,
+TransparentToggleToolButton,
+TransparentDropDownToolButton,
+TransparentPushButton,
+TransparentDropDownPushButton,
+TransparentTogglePushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+TransparentToolButton:hover,
+TransparentToggleToolButton:hover,
+TransparentDropDownToolButton:hover,
+TransparentPushButton:hover,
+TransparentDropDownPushButton:hover,
+TransparentTogglePushButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+TransparentToolButton:pressed,
+TransparentToggleToolButton:pressed,
+TransparentDropDownToolButton:pressed,
+TransparentPushButton:pressed,
+TransparentDropDownPushButton:pressed,
+TransparentTogglePushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+TransparentToolButton:disabled,
+TransparentToggleToolButton:disabled,
+TransparentDropDownToolButton:disabled,
+TransparentPushButton:disabled,
+TransparentDropDownPushButton:disabled,
+TransparentTogglePushButton:disabled {
+    background-color: transparent;
+    border: none;
+}
+
+PillPushButton,
+PillPushButton:hover,
+PillPushButton:pressed,
+PillPushButton:disabled,
+PillPushButton:checked,
+PillPushButton:checked:hover,
+PillPushButton:checked:pressed,
+PillPushButton:disabled:checked,
+PillToolButton,
+PillToolButton:hover,
+PillToolButton:pressed,
+PillToolButton:disabled,
+PillToolButton:checked,
+PillToolButton:checked:hover,
+PillToolButton:checked:pressed,
+PillToolButton:disabled:checked {
+    background-color: transparent;
+    border: none;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>开🦌</string>
          </property>
         </widget>
        </widget>
@@ -300,8 +1677,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>721</width>
-        <height>611</height>
+        <width>1121</width>
+        <height>661</height>
        </rect>
       </property>
       <property name="widgetResizable">
@@ -312,7 +1689,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>719</width>
+         <width>1119</width>
          <height>1000</height>
         </rect>
        </property>
@@ -322,68 +1699,379 @@
          <height>1000</height>
         </size>
        </property>
-       <widget class="SimpleCardWidget" name="SimpleCardWidget_8">
+       <widget class="ElevatedCardWidget" name="ElevatedCardWidget_6">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>60</x>
           <y>10</y>
-          <width>711</width>
-          <height>171</height>
+          <width>331</width>
+          <height>141</height>
          </rect>
         </property>
-        <widget class="TitleLabel" name="TitleLabel_9">
+        <widget class="TitleLabel" name="TitleLabel_8">
          <property name="geometry">
           <rect>
            <x>10</x>
            <y>0</y>
-           <width>211</width>
+           <width>271</width>
            <height>61</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Minecraft AE</family>
-           <pointsize>21</pointsize>
+           <family>微软雅黑</family>
+           <pointsize>18</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="text">
-          <string>本地视频转换器</string>
+          <string>我是不会开发实用工具的</string>
          </property>
         </widget>
-        <widget class="CaptionLabel" name="CaptionLabel_8">
+        <widget class="CaptionLabel" name="CaptionLabel_6">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>60</y>
-           <width>431</width>
+           <y>50</y>
+           <width>141</width>
            <height>41</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Minecraft AE</family>
-           <pointsize>12</pointsize>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="text">
-          <string>打算做</string>
+          <string>懂？</string>
          </property>
         </widget>
-        <widget class="PushButton" name="start_ffmpeg">
+        <widget class="PushButton" name="go">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>110</y>
-           <width>171</width>
+           <y>90</y>
+           <width>111</width>
            <height>32</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">/* ==================== 基础按钮样式 ==================== */
+/* 默认状态：青色背景，白色文字，保留圆角和边框 */
+PushButton, ToolButton, ToggleButton, ToggleToolButton,
+PrimaryPushButton, PrimaryToolButton {
+    color: white;
+    background-color: #4ca0af;
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+    border-radius: 5px;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+/* 悬停状态：背景保持青色，文字变为黑色 */
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,
+PrimaryPushButton:hover, PrimaryToolButton:hover {
+    
+    background-color: #45a049; /* 强制背景色不变 */
+    border: 1px solid #45a049;
+    border-bottom: 1px solid #007780;
+}
+
+/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */
+PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,
+PrimaryPushButton:pressed, PrimaryToolButton:pressed {
+    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */
+    background-color: #009faa; /* 强制背景色不变 */
+    border-bottom: 1px solid #007780;
+}
+
+/* 禁用状态：背景变灰，文字变灰 */
+PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,
+PrimaryPushButton:disabled, PrimaryToolButton:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 特殊按钮的内边距调整 ==================== */
+ToolButton {
+    padding: 5px 9px 6px 8px;
+}
+
+PushButton[isPlaceholderText=true] {
+    color: rgba(0, 0, 0, 0.6063);
+}
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+DropDownToolButton, PrimaryDropDownToolButton {
+    padding: 5px 31px 6px 8px;
+}
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+/* ==================== 切换按钮的选中状态 ==================== */
+/* 选中状态默认就是青色，所以文字保持白色 */
+ToggleButton:checked,
+ToggleToolButton:checked {
+    color: white;
+    background-color: #009faa;
+    border: 1px solid #00a7b3;
+    border-bottom: 1px solid #007780;
+}
+
+/* 选中状态下悬停，文字变为黑色 */
+ToggleButton:checked:hover,
+ToggleToolButton:checked:hover {
+    color: black;
+    background-color: #009faa;
+}
+
+/* 选中状态下按下，文字变为深黑色 */
+ToggleButton:checked:pressed,
+ToggleToolButton:checked:pressed {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #009faa;
+}
+
+/* 选中状态下禁用 */
+ToggleButton:checked:disabled,
+ToggleToolButton:checked:disabled {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==================== 分割按钮 ==================== */
+SplitDropButton,
+PrimarySplitDropButton {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#splitPushButton,
+#splitToolButton,
+#primarySplitPushButton,
+#primarySplitToolButton {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#splitPushButton:pressed,
+#splitToolButton:pressed,
+SplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+PrimarySplitDropButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+#primarySplitPushButton, #primarySplitToolButton {
+    border-right: 1px solid #00a7b3;
+}
+
+#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {
+    border-bottom: 1px solid #007780;
+}
+
+/* ==================== 其他控件（保留原始样式）==================== */
+HyperlinkButton {
+    padding: 6px 12px 6px 12px;
+    color: #009faa;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+HyperlinkButton[hasIcon=false] {
+    padding: 6px 12px 6px 12px;
+}
+
+HyperlinkButton[hasIcon=true] {
+    padding: 6px 12px 6px 36px;
+}
+
+HyperlinkButton:hover {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 10);
+    border: none;
+}
+
+HyperlinkButton:pressed {
+    color: #009faa;
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+HyperlinkButton:disabled {
+    color: rgba(0, 0, 0, 0.43);
+    background-color: transparent;
+    border: none;
+}
+
+RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    color: black;
+}
+
+RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #999999;
+    background-color: rgba(0, 0, 0, 5);
+    margin-right: 4px;
+}
+
+RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 224, 223),
+            stop:1 rgb(225, 224, 223));
+}
+
+RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.6 rgb(255, 255, 255),
+            stop:0.7 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 #009faa,
+            stop:1 #009faa);
+}
+
+RadioButton:disabled {
+    color: rgba(0, 0, 0, 110);
+}
+
+RadioButton::indicator:disabled {
+    border: 2px solid #bbbbbb;
+    background-color: transparent;
+}
+
+RadioButton::indicator:disabled:checked {
+    border: none;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgba(0, 0, 0, 0.2169),
+            stop:1 rgba(0, 0, 0, 0.2169));
+}
+
+TransparentToolButton,
+TransparentToggleToolButton,
+TransparentDropDownToolButton,
+TransparentPushButton,
+TransparentDropDownPushButton,
+TransparentTogglePushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+TransparentToolButton:hover,
+TransparentToggleToolButton:hover,
+TransparentDropDownToolButton:hover,
+TransparentPushButton:hover,
+TransparentDropDownPushButton:hover,
+TransparentTogglePushButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+TransparentToolButton:pressed,
+TransparentToggleToolButton:pressed,
+TransparentDropDownToolButton:pressed,
+TransparentPushButton:pressed,
+TransparentDropDownPushButton:pressed,
+TransparentTogglePushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+TransparentToolButton:disabled,
+TransparentToggleToolButton:disabled,
+TransparentDropDownToolButton:disabled,
+TransparentPushButton:disabled,
+TransparentDropDownPushButton:disabled,
+TransparentTogglePushButton:disabled {
+    background-color: transparent;
+    border: none;
+}
+
+PillPushButton,
+PillPushButton:hover,
+PillPushButton:pressed,
+PillPushButton:disabled,
+PillPushButton:checked,
+PillPushButton:checked:hover,
+PillPushButton:checked:pressed,
+PillPushButton:disabled:checked,
+PillToolButton,
+PillToolButton:hover,
+PillToolButton:pressed,
+PillToolButton:disabled,
+PillToolButton:checked,
+PillToolButton:checked:hover,
+PillToolButton:checked:pressed,
+PillToolButton:disabled:checked {
+    background-color: transparent;
+    border: none;
+}
+</string>
+         </property>
          <property name="text">
-          <string>启动MDN ffmpeg GUI</string>
+          <string>溜了溜了</string>
          </property>
         </widget>
        </widget>
@@ -394,7 +2082,7 @@
      <widget class="TitleLabel" name="TitleLabel_5">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>80</x>
         <y>10</y>
         <width>161</width>
         <height>38</height>
@@ -407,9 +2095,9 @@
      <widget class="SimpleCardWidget" name="SimpleCardWidget_4">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>80</x>
         <y>60</y>
-        <width>711</width>
+        <width>1041</width>
         <height>61</height>
        </rect>
       </property>
@@ -429,7 +2117,7 @@
       <widget class="ComboBox" name="music">
        <property name="geometry">
         <rect>
-         <x>560</x>
+         <x>890</x>
          <y>20</y>
          <width>131</width>
          <height>32</height>
@@ -441,6 +2129,44 @@
       </widget>
      </widget>
     </widget>
+   </widget>
+   <widget class="NavigationPanel" name="NavigationPanel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>51</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">NavigationPanel[menu=true] {
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(229, 229, 229);
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+NavigationPanel[menu=false] {
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色，50%透明度 */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+NavigationPanel[transparent=true] {
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色，50%透明度 */
+}
+
+QScrollArea, #scrollWidget {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色，50%透明度 */
+}
+
+/* NavigationInterface {
+    background-color: rgb(243, 243, 243);
+} */</string>
+    </property>
    </widget>
   </widget>
  </widget>
@@ -456,14 +2182,31 @@
    <header>qfluentwidgets</header>
   </customwidget>
   <customwidget>
+   <class>PixmapLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
    <class>CardWidget</class>
    <extends>QFrame</extends>
    <header>qfluentwidgets</header>
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>ElevatedCardWidget</class>
+   <extends>SimpleCardWidget</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>SimpleCardWidget</class>
    <extends>CardWidget</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HeaderCardWidget</class>
+   <extends>SimpleCardWidget</extends>
    <header>qfluentwidgets</header>
    <container>1</container>
   </customwidget>
@@ -488,7 +2231,25 @@
    <extends>QLabel</extends>
    <header>qfluentwidgets</header>
   </customwidget>
+  <customwidget>
+   <class>ImageLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>AvatarWidget</class>
+   <extends>ImageLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>NavigationPanel</class>
+   <extends>QFrame</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="icons/bing_image.qrc"/>
+  <include location="icons/avatar.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -12,9 +12,7 @@
 2 pip install -r requirements.txt<br>
 3 python main.py
 
-#### 注意事项
-1 linux操作系统在使用该工具时可能需要python3-(反正和x11和Wayland有关系，报错说什么就pip，apt，yum，dnf，pacman，rpm什么吧）<br>
-2 python解释器版本建议使用cpython3.8
+
 
 
 

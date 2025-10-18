@@ -9,234 +9,1856 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QUrl
-from PyQt5.QtMultimedia import QSoundEffect
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(802, 603)
+        MainWindow.resize(1124, 669)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("./icons/biaoqing.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(80, 0, 721, 601))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1121, 681))
         self.stackedWidget.setObjectName("stackedWidget")
-        # Create NavigationBar
-        self.navigationBar = NavigationBar(self.centralwidget)
-        self.navigationBar.setGeometry(QtCore.QRect(0, 0, 80, 600))
-        self.navigationBar.setObjectName("navigationBar")
-        # end
         self.home = QtWidgets.QWidget()
         self.home.setObjectName("home")
         self.SmoothScrollArea = SmoothScrollArea(self.home)
-        self.SmoothScrollArea.setGeometry(QtCore.QRect(0, 0, 721, 611))
+        self.SmoothScrollArea.setGeometry(QtCore.QRect(0, 0, 1131, 671))
         self.SmoothScrollArea.setWidgetResizable(True)
         self.SmoothScrollArea.setObjectName("SmoothScrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 719, 609))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1129, 669))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.TitleLabel_2 = TitleLabel(self.scrollAreaWidgetContents)
-        self.TitleLabel_2.setGeometry(QtCore.QRect(130, 10, 691, 181))
-        self.TitleLabel_2.setObjectName("TitleLabel_2")
+        self.PixmapLabel = PixmapLabel(self.scrollAreaWidgetContents)
+        self.PixmapLabel.setGeometry(QtCore.QRect(-40, 0, 1171, 681))
+        self.PixmapLabel.setStyleSheet("border-image:url(:/background/DAILYBING.COM-ZH-CN-20240105-UHD.JPG)")
+        self.PixmapLabel.setObjectName("PixmapLabel")
+        self.HeaderCardWidget = HeaderCardWidget(self.scrollAreaWidgetContents)
+        self.HeaderCardWidget.setGeometry(QtCore.QRect(270, 470, 841, 191))
+        self.HeaderCardWidget.setObjectName("HeaderCardWidget")
+        # title
+        self.HeaderCardWidget.setTitle("我们非常不欢迎您使用该工具箱")
+        # end
+        self.TitleLabel_9 = TitleLabel(self.HeaderCardWidget)
+        self.TitleLabel_9.setGeometry(QtCore.QRect(120, 50, 201, 51))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(16)
+        font.setBold(False)
+        font.setWeight(50)
+        self.TitleLabel_9.setFont(font)
+        self.TitleLabel_9.setObjectName("TitleLabel_9")
+        self.TitleLabel_10 = TitleLabel(self.HeaderCardWidget)
+        self.TitleLabel_10.setGeometry(QtCore.QRect(120, 90, 201, 51))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setWeight(50)
+        self.TitleLabel_10.setFont(font)
+        self.TitleLabel_10.setObjectName("TitleLabel_10")
+        self.AvatarWidget = AvatarWidget(self.HeaderCardWidget)
+        self.AvatarWidget.setGeometry(QtCore.QRect(10, 50, 96, 96))
+        self.AvatarWidget.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.AvatarWidget.setObjectName("AvatarWidget")
+        # some add
+        self.AvatarWidget.setImage("./icons/mdn.webp")
+        self.AvatarWidget.setRadius(50)
+        # end
         self.SmoothScrollArea.setWidget(self.scrollAreaWidgetContents)
         self.stackedWidget.addWidget(self.home)
         self.redstonepage = QtWidgets.QWidget()
         self.redstonepage.setObjectName("redstonepage")
         self.SmoothScrollArea_2 = SmoothScrollArea(self.redstonepage)
-        self.SmoothScrollArea_2.setGeometry(QtCore.QRect(0, 0, 721, 611))
+        self.SmoothScrollArea_2.setGeometry(QtCore.QRect(0, 0, 1131, 671))
+        self.SmoothScrollArea_2.setStyleSheet("")
         self.SmoothScrollArea_2.setWidgetResizable(True)
         self.SmoothScrollArea_2.setObjectName("SmoothScrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 719, 1000))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 1129, 1000))
         self.scrollAreaWidgetContents_2.setMinimumSize(QtCore.QSize(0, 1000))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
-        self.SimpleCardWidget = SimpleCardWidget(self.scrollAreaWidgetContents_2)
-        self.SimpleCardWidget.setGeometry(QtCore.QRect(0, 10, 711, 171))
-        self.SimpleCardWidget.setObjectName("SimpleCardWidget")
-        self.TitleLabel = TitleLabel(self.SimpleCardWidget)
-        self.TitleLabel.setGeometry(QtCore.QRect(10, 0, 161, 61))
+        self.ElevatedCardWidget_2 = ElevatedCardWidget(self.scrollAreaWidgetContents_2)
+        self.ElevatedCardWidget_2.setGeometry(QtCore.QRect(70, 10, 241, 141))
+        self.ElevatedCardWidget_2.setObjectName("ElevatedCardWidget_2")
+        self.TitleLabel_3 = TitleLabel(self.ElevatedCardWidget_2)
+        self.TitleLabel_3.setGeometry(QtCore.QRect(10, 0, 221, 61))
         font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(21)
-        font.setBold(False)
-        font.setWeight(50)
-        self.TitleLabel.setFont(font)
-        self.TitleLabel.setObjectName("TitleLabel")
-        self.CaptionLabel = CaptionLabel(self.SimpleCardWidget)
-        self.CaptionLabel.setGeometry(QtCore.QRect(10, 60, 431, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setWeight(50)
-        self.CaptionLabel.setFont(font)
-        self.CaptionLabel.setObjectName("CaptionLabel")
-        self.pian_1 = PushButton(self.SimpleCardWidget)
-        self.pian_1.setGeometry(QtCore.QRect(10, 110, 111, 32))
-        self.pian_1.setObjectName("pian_1")
-        self.SimpleCardWidget_2 = SimpleCardWidget(self.scrollAreaWidgetContents_2)
-        self.SimpleCardWidget_2.setGeometry(QtCore.QRect(0, 190, 711, 171))
-        self.SimpleCardWidget_2.setObjectName("SimpleCardWidget_2")
-        self.TitleLabel_3 = TitleLabel(self.SimpleCardWidget_2)
-        self.TitleLabel_3.setGeometry(QtCore.QRect(10, 0, 591, 61))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(21)
+        font.setFamily("微软雅黑")
+        font.setPointSize(16)
         font.setBold(False)
         font.setWeight(50)
         self.TitleLabel_3.setFont(font)
         self.TitleLabel_3.setObjectName("TitleLabel_3")
-        self.CaptionLabel_2 = CaptionLabel(self.SimpleCardWidget_2)
-        self.CaptionLabel_2.setGeometry(QtCore.QRect(10, 60, 431, 41))
+        self.CaptionLabel_2 = CaptionLabel(self.ElevatedCardWidget_2)
+        self.CaptionLabel_2.setGeometry(QtCore.QRect(10, 50, 151, 41))
         font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(12)
+        font.setFamily("微软雅黑")
+        font.setPointSize(8)
         font.setBold(False)
         font.setWeight(50)
         self.CaptionLabel_2.setFont(font)
         self.CaptionLabel_2.setObjectName("CaptionLabel_2")
-        self.shell = PushButton(self.SimpleCardWidget_2)
-        self.shell.setGeometry(QtCore.QRect(10, 110, 111, 32))
+        self.shell = PushButton(self.ElevatedCardWidget_2)
+        self.shell.setGeometry(QtCore.QRect(10, 90, 111, 32))
+        self.shell.setStyleSheet("/* ==================== 基础按钮样式 ==================== */\n"
+"/* 默认状态：青色背景，白色文字，保留圆角和边框 */\n"
+"PushButton, ToolButton, ToggleButton, ToggleToolButton,\n"
+"PrimaryPushButton, PrimaryToolButton {\n"
+"    color: white;\n"
+"    background-color: #4ca0af;\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* 悬停状态：背景保持青色，文字变为黑色 */\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,\n"
+"PrimaryPushButton:hover, PrimaryToolButton:hover {\n"
+"    \n"
+"    background-color: #45a049; /* 强制背景色不变 */\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,\n"
+"PrimaryPushButton:pressed, PrimaryToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */\n"
+"    background-color: #009faa; /* 强制背景色不变 */\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 禁用状态：背景变灰，文字变灰 */\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,\n"
+"PrimaryPushButton:disabled, PrimaryToolButton:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* ==================== 特殊按钮的内边距调整 ==================== */\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[isPlaceholderText=true] {\n"
+"    color: rgba(0, 0, 0, 0.6063);\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"/* ==================== 切换按钮的选中状态 ==================== */\n"
+"/* 选中状态默认就是青色，所以文字保持白色 */\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 选中状态下悬停，文字变为黑色 */\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    color: black;\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下按下，文字变为深黑色 */\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7);\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下禁用 */\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"\n"
+"/* ==================== 分割按钮 ==================== */\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #00a7b3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* ==================== 其他控件（保留原始样式）==================== */\n"
+"HyperlinkButton {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransparentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransparentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
         self.shell.setObjectName("shell")
-        self.SimpleCardWidget_3 = SimpleCardWidget(self.scrollAreaWidgetContents_2)
-        self.SimpleCardWidget_3.setGeometry(QtCore.QRect(0, 370, 711, 171))
-        self.SimpleCardWidget_3.setObjectName("SimpleCardWidget_3")
-        self.TitleLabel_4 = TitleLabel(self.SimpleCardWidget_3)
+        self.ElevatedCardWidget_3 = ElevatedCardWidget(self.scrollAreaWidgetContents_2)
+        self.ElevatedCardWidget_3.setGeometry(QtCore.QRect(330, 10, 241, 141))
+        self.ElevatedCardWidget_3.setObjectName("ElevatedCardWidget_3")
+        self.TitleLabel_4 = TitleLabel(self.ElevatedCardWidget_3)
         self.TitleLabel_4.setGeometry(QtCore.QRect(10, 0, 231, 61))
         font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(21)
+        font.setFamily("微软雅黑")
+        font.setPointSize(18)
         font.setBold(False)
         font.setWeight(50)
         self.TitleLabel_4.setFont(font)
         self.TitleLabel_4.setObjectName("TitleLabel_4")
-        self.CaptionLabel_3 = CaptionLabel(self.SimpleCardWidget_3)
-        self.CaptionLabel_3.setGeometry(QtCore.QRect(10, 60, 431, 41))
+        self.CaptionLabel_3 = CaptionLabel(self.ElevatedCardWidget_3)
+        self.CaptionLabel_3.setGeometry(QtCore.QRect(10, 50, 131, 41))
         font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(12)
+        font.setFamily("微软雅黑")
+        font.setPointSize(8)
         font.setBold(False)
         font.setWeight(50)
         self.CaptionLabel_3.setFont(font)
         self.CaptionLabel_3.setObjectName("CaptionLabel_3")
-        self.dao_time = PushButton(self.SimpleCardWidget_3)
-        self.dao_time.setGeometry(QtCore.QRect(10, 110, 111, 32))
+        self.dao_time = PushButton(self.ElevatedCardWidget_3)
+        self.dao_time.setGeometry(QtCore.QRect(10, 90, 111, 32))
+        self.dao_time.setStyleSheet("/* ==================== 基础按钮样式 ==================== */\n"
+"/* 默认状态：青色背景，白色文字，保留圆角和边框 */\n"
+"PushButton, ToolButton, ToggleButton, ToggleToolButton,\n"
+"PrimaryPushButton, PrimaryToolButton {\n"
+"    color: white;\n"
+"    background-color: #4ca0af;\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* 悬停状态：背景保持青色，文字变为黑色 */\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,\n"
+"PrimaryPushButton:hover, PrimaryToolButton:hover {\n"
+"    \n"
+"    background-color: #45a049; /* 强制背景色不变 */\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,\n"
+"PrimaryPushButton:pressed, PrimaryToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */\n"
+"    background-color: #009faa; /* 强制背景色不变 */\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 禁用状态：背景变灰，文字变灰 */\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,\n"
+"PrimaryPushButton:disabled, PrimaryToolButton:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* ==================== 特殊按钮的内边距调整 ==================== */\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[isPlaceholderText=true] {\n"
+"    color: rgba(0, 0, 0, 0.6063);\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"/* ==================== 切换按钮的选中状态 ==================== */\n"
+"/* 选中状态默认就是青色，所以文字保持白色 */\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 选中状态下悬停，文字变为黑色 */\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    color: black;\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下按下，文字变为深黑色 */\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7);\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下禁用 */\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"\n"
+"/* ==================== 分割按钮 ==================== */\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #00a7b3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* ==================== 其他控件（保留原始样式）==================== */\n"
+"HyperlinkButton {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransparentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransparentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
         self.dao_time.setObjectName("dao_time")
+        self.ElevatedCardWidget_4 = ElevatedCardWidget(self.scrollAreaWidgetContents_2)
+        self.ElevatedCardWidget_4.setGeometry(QtCore.QRect(590, 10, 241, 141))
+        self.ElevatedCardWidget_4.setObjectName("ElevatedCardWidget_4")
+        self.TitleLabel_6 = TitleLabel(self.ElevatedCardWidget_4)
+        self.TitleLabel_6.setGeometry(QtCore.QRect(10, 0, 231, 61))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.TitleLabel_6.setFont(font)
+        self.TitleLabel_6.setObjectName("TitleLabel_6")
+        self.CaptionLabel_4 = CaptionLabel(self.ElevatedCardWidget_4)
+        self.CaptionLabel_4.setGeometry(QtCore.QRect(10, 40, 131, 41))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setWeight(50)
+        self.CaptionLabel_4.setFont(font)
+        self.CaptionLabel_4.setObjectName("CaptionLabel_4")
+        self.lh_run = PushButton(self.ElevatedCardWidget_4)
+        self.lh_run.setGeometry(QtCore.QRect(10, 90, 111, 32))
+        self.lh_run.setStyleSheet("/* ==================== 基础按钮样式 ==================== */\n"
+"/* 默认状态：青色背景，白色文字，保留圆角和边框 */\n"
+"PushButton, ToolButton, ToggleButton, ToggleToolButton,\n"
+"PrimaryPushButton, PrimaryToolButton {\n"
+"    color: white;\n"
+"    background-color: #4ca0af;\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* 悬停状态：背景保持青色，文字变为黑色 */\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,\n"
+"PrimaryPushButton:hover, PrimaryToolButton:hover {\n"
+"    \n"
+"    background-color: #45a049; /* 强制背景色不变 */\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,\n"
+"PrimaryPushButton:pressed, PrimaryToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */\n"
+"    background-color: #009faa; /* 强制背景色不变 */\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 禁用状态：背景变灰，文字变灰 */\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,\n"
+"PrimaryPushButton:disabled, PrimaryToolButton:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* ==================== 特殊按钮的内边距调整 ==================== */\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[isPlaceholderText=true] {\n"
+"    color: rgba(0, 0, 0, 0.6063);\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"/* ==================== 切换按钮的选中状态 ==================== */\n"
+"/* 选中状态默认就是青色，所以文字保持白色 */\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 选中状态下悬停，文字变为黑色 */\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    color: black;\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下按下，文字变为深黑色 */\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7);\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下禁用 */\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"\n"
+"/* ==================== 分割按钮 ==================== */\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #00a7b3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* ==================== 其他控件（保留原始样式）==================== */\n"
+"HyperlinkButton {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransparentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransparentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.lh_run.setObjectName("lh_run")
+        self.ElevatedCardWidget_5 = ElevatedCardWidget(self.scrollAreaWidgetContents_2)
+        self.ElevatedCardWidget_5.setGeometry(QtCore.QRect(850, 10, 241, 141))
+        self.ElevatedCardWidget_5.setObjectName("ElevatedCardWidget_5")
+        self.TitleLabel_7 = TitleLabel(self.ElevatedCardWidget_5)
+        self.TitleLabel_7.setGeometry(QtCore.QRect(10, 0, 231, 61))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setWeight(50)
+        self.TitleLabel_7.setFont(font)
+        self.TitleLabel_7.setObjectName("TitleLabel_7")
+        self.CaptionLabel_5 = CaptionLabel(self.ElevatedCardWidget_5)
+        self.CaptionLabel_5.setGeometry(QtCore.QRect(10, 40, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("微软雅黑")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setWeight(50)
+        self.CaptionLabel_5.setFont(font)
+        self.CaptionLabel_5.setObjectName("CaptionLabel_5")
+        self.deer_pipe = PushButton(self.ElevatedCardWidget_5)
+        self.deer_pipe.setGeometry(QtCore.QRect(10, 90, 111, 32))
+        self.deer_pipe.setStyleSheet("/* ==================== 基础按钮样式 ==================== */\n"
+"/* 默认状态：青色背景，白色文字，保留圆角和边框 */\n"
+"PushButton, ToolButton, ToggleButton, ToggleToolButton,\n"
+"PrimaryPushButton, PrimaryToolButton {\n"
+"    color: white;\n"
+"    background-color: #4ca0af;\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* 悬停状态：背景保持青色，文字变为黑色 */\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,\n"
+"PrimaryPushButton:hover, PrimaryToolButton:hover {\n"
+"    \n"
+"    background-color: #45a049; /* 强制背景色不变 */\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,\n"
+"PrimaryPushButton:pressed, PrimaryToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */\n"
+"    background-color: #009faa; /* 强制背景色不变 */\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 禁用状态：背景变灰，文字变灰 */\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,\n"
+"PrimaryPushButton:disabled, PrimaryToolButton:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* ==================== 特殊按钮的内边距调整 ==================== */\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[isPlaceholderText=true] {\n"
+"    color: rgba(0, 0, 0, 0.6063);\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"/* ==================== 切换按钮的选中状态 ==================== */\n"
+"/* 选中状态默认就是青色，所以文字保持白色 */\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 选中状态下悬停，文字变为黑色 */\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    color: black;\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下按下，文字变为深黑色 */\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7);\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下禁用 */\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"\n"
+"/* ==================== 分割按钮 ==================== */\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #00a7b3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* ==================== 其他控件（保留原始样式）==================== */\n"
+"HyperlinkButton {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransparentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransparentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.deer_pipe.setObjectName("deer_pipe")
         self.SmoothScrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.stackedWidget.addWidget(self.redstonepage)
         self.toolspage = QtWidgets.QWidget()
         self.toolspage.setObjectName("toolspage")
         self.SmoothScrollArea_3 = SmoothScrollArea(self.toolspage)
-        self.SmoothScrollArea_3.setGeometry(QtCore.QRect(0, 0, 721, 611))
+        self.SmoothScrollArea_3.setGeometry(QtCore.QRect(0, 0, 1121, 661))
         self.SmoothScrollArea_3.setWidgetResizable(True)
         self.SmoothScrollArea_3.setObjectName("SmoothScrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 719, 1000))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 1119, 1000))
         self.scrollAreaWidgetContents_3.setMinimumSize(QtCore.QSize(0, 1000))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
-        self.SimpleCardWidget_8 = SimpleCardWidget(self.scrollAreaWidgetContents_3)
-        self.SimpleCardWidget_8.setGeometry(QtCore.QRect(0, 10, 711, 171))
-        self.SimpleCardWidget_8.setObjectName("SimpleCardWidget_8")
-        self.TitleLabel_9 = TitleLabel(self.SimpleCardWidget_8)
-        self.TitleLabel_9.setGeometry(QtCore.QRect(10, 0, 211, 61))
+        self.ElevatedCardWidget_6 = ElevatedCardWidget(self.scrollAreaWidgetContents_3)
+        self.ElevatedCardWidget_6.setGeometry(QtCore.QRect(60, 10, 331, 141))
+        self.ElevatedCardWidget_6.setObjectName("ElevatedCardWidget_6")
+        self.TitleLabel_8 = TitleLabel(self.ElevatedCardWidget_6)
+        self.TitleLabel_8.setGeometry(QtCore.QRect(10, 0, 271, 61))
         font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(21)
+        font.setFamily("微软雅黑")
+        font.setPointSize(18)
         font.setBold(False)
         font.setWeight(50)
-        self.TitleLabel_9.setFont(font)
-        self.TitleLabel_9.setObjectName("TitleLabel_9")
-        self.CaptionLabel_8 = CaptionLabel(self.SimpleCardWidget_8)
-        self.CaptionLabel_8.setGeometry(QtCore.QRect(10, 60, 431, 41))
+        self.TitleLabel_8.setFont(font)
+        self.TitleLabel_8.setObjectName("TitleLabel_8")
+        self.CaptionLabel_6 = CaptionLabel(self.ElevatedCardWidget_6)
+        self.CaptionLabel_6.setGeometry(QtCore.QRect(10, 50, 141, 41))
         font = QtGui.QFont()
-        font.setFamily("Minecraft AE")
-        font.setPointSize(12)
+        font.setFamily("微软雅黑")
+        font.setPointSize(8)
         font.setBold(False)
         font.setWeight(50)
-        self.CaptionLabel_8.setFont(font)
-        self.CaptionLabel_8.setObjectName("CaptionLabel_8")
-        self.start_ffmpeg = PushButton(self.SimpleCardWidget_8)
-        self.start_ffmpeg.setGeometry(QtCore.QRect(10, 110, 171, 32))
-        self.start_ffmpeg.setObjectName("start_ffmpeg")
+        self.CaptionLabel_6.setFont(font)
+        self.CaptionLabel_6.setObjectName("CaptionLabel_6")
+        self.go = PushButton(self.ElevatedCardWidget_6)
+        self.go.setGeometry(QtCore.QRect(10, 90, 111, 32))
+        self.go.setStyleSheet("/* ==================== 基础按钮样式 ==================== */\n"
+"/* 默认状态：青色背景，白色文字，保留圆角和边框 */\n"
+"PushButton, ToolButton, ToggleButton, ToggleToolButton,\n"
+"PrimaryPushButton, PrimaryToolButton {\n"
+"    color: white;\n"
+"    background-color: #4ca0af;\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* 悬停状态：背景保持青色，文字变为黑色 */\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover,\n"
+"PrimaryPushButton:hover, PrimaryToolButton:hover {\n"
+"    \n"
+"    background-color: #45a049; /* 强制背景色不变 */\n"
+"    border: 1px solid #45a049;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 按下状态：背景保持青色，文字变为黑色（或深灰色以示反馈） */\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed,\n"
+"PrimaryPushButton:pressed, PrimaryToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7); /* 按下时文字稍暗，提供视觉反馈 */\n"
+"    background-color: #009faa; /* 强制背景色不变 */\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 禁用状态：背景变灰，文字变灰 */\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled,\n"
+"PrimaryPushButton:disabled, PrimaryToolButton:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* ==================== 特殊按钮的内边距调整 ==================== */\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[isPlaceholderText=true] {\n"
+"    color: rgba(0, 0, 0, 0.6063);\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"/* ==================== 切换按钮的选中状态 ==================== */\n"
+"/* 选中状态默认就是青色，所以文字保持白色 */\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* 选中状态下悬停，文字变为黑色 */\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    color: black;\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下按下，文字变为深黑色 */\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(0, 0, 0, 0.7);\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"/* 选中状态下禁用 */\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.6);\n"
+"    background-color: rgba(0, 0, 0, 0.2);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"\n"
+"/* ==================== 分割按钮 ==================== */\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #00a7b3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"/* ==================== 其他控件（保留原始样式）==================== */\n"
+"HyperlinkButton {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransparentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransparentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.go.setObjectName("go")
         self.SmoothScrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
         self.stackedWidget.addWidget(self.toolspage)
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.TitleLabel_5 = TitleLabel(self.page)
-        self.TitleLabel_5.setGeometry(QtCore.QRect(10, 10, 161, 38))
+        self.TitleLabel_5.setGeometry(QtCore.QRect(80, 10, 161, 38))
         self.TitleLabel_5.setObjectName("TitleLabel_5")
         self.SimpleCardWidget_4 = SimpleCardWidget(self.page)
-        self.SimpleCardWidget_4.setGeometry(QtCore.QRect(0, 60, 711, 61))
+        self.SimpleCardWidget_4.setGeometry(QtCore.QRect(80, 60, 1041, 61))
         self.SimpleCardWidget_4.setObjectName("SimpleCardWidget_4")
         self.SubtitleLabel = SubtitleLabel(self.SimpleCardWidget_4)
-        self.SubtitleLabel.setGeometry(QtCore.QRect(20, 20, 2000, 28))
+        self.SubtitleLabel.setGeometry(QtCore.QRect(20, 20, 141, 28))
         self.SubtitleLabel.setObjectName("SubtitleLabel")
         self.music = ComboBox(self.SimpleCardWidget_4)
-
-        items=["纯神经","伴奏神经","完整神经"]
-        self.music.addItem("纯神经",userData="chun")
-        self.music.addItem("伴奏神经",userData="ban")
-        self.music.addItem("完整神经",userData="all ")
-
-
-        self.music.setGeometry(QtCore.QRect(560, 20, 131, 32))
+        self.music.setGeometry(QtCore.QRect(890, 20, 131, 32))
         self.music.setObjectName("music")
+        # choosebox
+        items = ["纯神经", "伴奏神经", "完整神经"]
+        self.music.addItem("纯神经", userData="chun")
+        self.music.addItem("伴奏神经", userData="ban")
+        self.music.addItem("完整神经", userData="all ")
+        # end
         self.stackedWidget.addWidget(self.page)
+        self.NavigationPanel = NavigationPanel(self.centralwidget)
+        self.NavigationPanel.setGeometry(QtCore.QRect(0, 0, 51, 681))
+        self.NavigationPanel.setStyleSheet("NavigationPanel[menu=true] {\n"
+"    background-color: rgb(243, 243, 243);\n"
+"    border: 1px solid rgb(229, 229, 229);\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"}\n"
+"\n"
+"NavigationPanel[menu=false] {\n"
+"    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色，50%透明度 */\n"
+"    border: 1px solid rgba(255, 255, 255, 0.5);\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"}\n"
+"\n"
+"NavigationPanel[transparent=true] {\n"
+"    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色，50%透明度 */\n"
+"}\n"
+"\n"
+"QScrollArea, #scrollWidget {\n"
+"    border: none;\n"
+"    background-color: rgba(255, 255, 255, 0.5); /* 半透明白色，50%透明度 */\n"
+"}\n"
+"\n"
+"/* NavigationInterface {\n"
+"    background-color: rgb(243, 243, 243);\n"
+"} */")
+        self.NavigationPanel.setObjectName("NavigationPanel")
         MainWindow.setCentralWidget(self.centralwidget)
-
-        self.navigationBar.addItem(
-            routeKey="home",
-            text="首页",
-            icon=FluentIcon.HOME,
-            onClick=lambda: self.stackedWidget.setCurrentIndex(0)
-        )
-        self.navigationBar.addItem(
-            routeKey="tools",
-            text="赤石工具",
-            icon="./icons/star.svg",  # Using built-in icon instead of file
-            onClick=lambda: self.stackedWidget.setCurrentIndex(1)
-        )
-        self.navigationBar.addItem(
-            routeKey="tools_useful",
-            text="实用工具",
-            icon="./icons/toolbox.svg",  # Using built-in icon instead of file
-            onClick=lambda: self.stackedWidget.setCurrentIndex(2)
-        )
-        self.navigationBar.addItem(
-            routeKey="setting",
-            text="设置",
-            icon=FluentIcon.SETTING,
-            onClick=lambda: self.stackedWidget.setCurrentIndex(3)
-        )
-
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.stackedWidget.setCurrentIndex(0)
+        # add page to panel
+        self.NavigationPanel.addItem(icon=FluentIcon.HOME,
+                                     onClick=lambda: self.stackedWidget.setCurrentIndex(0),
+                                     text="主页",
+                                     routeKey="home")
+        self.NavigationPanel.addItem(icon=FluentIcon.CAFE,
+                                     onClick=lambda: self.stackedWidget.setCurrentIndex(1),
+                                     text="赤石工具",
+                                     routeKey="redstone")
+        self.NavigationPanel.addItem(icon=FluentIcon.APPLICATION,
+                                     onClick=lambda: self.stackedWidget.setCurrentIndex(2),
+                                     text="实用工具",
+                                     routeKey="tool")
+        self.NavigationPanel.addItem(icon=FluentIcon.SETTING,
+                                     onClick=lambda: self.stackedWidget.setCurrentIndex(3),
+                                     text="设置",
+                                     routeKey="setting")
+        # end
 
         self.retranslateUi(MainWindow)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "赤石工具箱"))
-        self.TitleLabel_2.setText(_translate("MainWindow", "我们非常不欢迎您使用该工具箱"))
-        self.TitleLabel.setText(_translate("MainWindow", "看片神器"))
-        self.CaptionLabel.setText(_translate("MainWindow", "嗨，我是颠佬，这是我的看片神器，免费看片是我的秘密武器"))
-        self.pian_1.setText(_translate("MainWindow", "启动看片神器"))
+        self.TitleLabel_9.setText(_translate("MainWindow", "开发者:Nomdn"))
+        self.TitleLabel_10.setText(_translate("MainWindow", "使用GPL 3.0协议开源"))
         self.TitleLabel_3.setText(_translate("MainWindow", "Python 3.8 Shell"))
         self.CaptionLabel_2.setText(_translate("MainWindow", "\"Never Gonna Give You Up\""))
         self.shell.setText(_translate("MainWindow", "启动诈骗神器"))
         self.TitleLabel_4.setText(_translate("MainWindow", "记你两分钟"))
         self.CaptionLabel_3.setText(_translate("MainWindow", "世界上最简单的倒计时"))
         self.dao_time.setText(_translate("MainWindow", "开启倒计时"))
-        self.TitleLabel_9.setText(_translate("MainWindow", "本地视频转换器"))
-        self.CaptionLabel_8.setText(_translate("MainWindow", "打算做"))
-        self.start_ffmpeg.setText(_translate("MainWindow", "启动MDN ffmpeg GUI"))
+        self.TitleLabel_6.setText(_translate("MainWindow", "柠檬小助手"))
+        self.CaptionLabel_4.setText(_translate("MainWindow", "佳豪装b神器"))
+        self.lh_run.setText(_translate("MainWindow", "开始装b"))
+        self.TitleLabel_7.setText(_translate("MainWindow", "获取一张色图"))
+        self.CaptionLabel_5.setText(_translate("MainWindow", "改自我的另外一个项目"))
+        self.deer_pipe.setText(_translate("MainWindow", "开🦌"))
+        self.TitleLabel_8.setText(_translate("MainWindow", "我是不会开发实用工具的"))
+        self.CaptionLabel_6.setText(_translate("MainWindow", "懂？"))
+        self.go.setText(_translate("MainWindow", "溜了溜了"))
         self.TitleLabel_5.setText(_translate("MainWindow", "不常用设置"))
-        self.SubtitleLabel.setText(_translate("MainWindow", "神经BGM选择(不是侮辱亚运会志愿者，是在侮辱学校)"))
+        self.SubtitleLabel.setText(_translate("MainWindow", "神经BGM选择"))
         self.music.setText(_translate("MainWindow", "纯神经"))
-from qfluentwidgets import CaptionLabel, ComboBox, PushButton, SimpleCardWidget, SmoothScrollArea, SubtitleLabel, \
-    TitleLabel, FluentIcon, NavigationBar
+from qfluentwidgets import AvatarWidget, CaptionLabel, ComboBox, ElevatedCardWidget, PixmapLabel, PushButton, \
+    SimpleCardWidget, SmoothScrollArea, SubtitleLabel, TitleLabel, FluentIcon, NavigationBar, HeaderCardWidget, \
+    NavigationPanel,FluentWindow
+from icons import avatar_rc
+from icons import bing_image_rc

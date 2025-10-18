@@ -3,18 +3,16 @@ import time
 import random
 import sys
 
-# 我们的turtle必须快
+# 设置turtle
 t.delay(0)
 t.speed(0)
-# 我们的turtle必须看不见
 t.hideturtle()
 t.penup()
 t.goto(0, -150)
 t.pendown()
-# 我们的turtle必须不受tk颜色的限制
 t.colormode(255)
-# 我们的tutle必须不需要刷新
-t.tracer(False)
+t.tracer(True)  # 改为True，让turtle自动更新
+
 print('''
 使用文档:
 在命令行输入该脚本的运行命令，并在后面加入分秒参数，用空格隔开
@@ -27,98 +25,77 @@ tip:管理员模式下的powershell或者cmd可以去掉./
 ''')
 
 try:
-    # 获取外部参数个数
     value = len(sys.argv)
-    # 定义变量
     shi = 0
     fen = int(sys.argv[value - 2])
     miao = int(sys.argv[value - 1])
-    # 时间进位
+
     if miao >= 60:
-        # needadd代表的是进位的分
         needadd = miao // 60
         fen += needadd
-        # 取余
         miao %= 60
     if fen >= 60:
-        # needaddshi代表的是从分进位的时
         needaddshi = fen // 60
         shi += needaddshi
         fen %= 60
-    if shi:
-        # 如果有小时进位则这样计算循环次数
-        steps = 3600 * shi + 60 * fen + miao
-    else:
-        # 没有时的计算
-        steps = 60 * fen + miao
+
+    steps = 3600 * shi + 60 * fen + miao if shi else 60 * fen + miao
 
     for i in range(steps):
-
-        # 设置rgb色值
         r = random.randint(0, 255)
         g = random.randint(0, 255)
         bc = random.randint(0, 255)
         t.color(r, g, bc)
-        # 时间换算
-        if miao == 0:
-            fen -= 1
-            miao = 60
-        miao -= 1
-        # w是miao数的字符串化，当秒<10时就朝前面塞个0
-        if miao < 10:
-            w = f"0{miao}"
-        else:
-            w = str(miao)
 
-        if fen == 0:
-            shi -= 1
-            fen = 60
-        # fen和miao都是同理
-        if fen < 10:
-            q = f"0{fen}"
+        # 计算当前时间
+        total_seconds = steps - i
+        current_shi = total_seconds // 3600
+        current_fen = (total_seconds % 3600) // 60
+        current_miao = total_seconds % 60
+
+        # 格式化
+        miao_str = f"0{current_miao}" if current_miao < 10 else str(current_miao)
+        fen_str = f"0{current_fen}" if current_fen < 10 else str(current_fen)
+
+        if current_shi == 0:
+            a = f"{fen_str}:{miao_str}"
         else:
-            q = str(fen)
-        # 打印时间
-        if shi == 0:
-            a = f"{q}:{w}"
-        else:
-            a = f"{shi}:{q}:{w}"
-        time.sleep(1)
-        t.write(a, align="center", font=("宋体", 200))
+            a = f"{current_shi}:{fen_str}:{miao_str}"
 
         t.clear()
+        t.write(a, align="center", font=("宋体", 200))
+        t.update()  # 手动更新显示
+
+        time.sleep(1)
 
     t.write("TIME UP", align="center", font=("宋体", 200))
-
-
+    t.update()
 
 except:
-    # 默认操作,看不懂看上面注释
-    fen = 2
-    miao = 0
-
-    steps = 60 * fen + miao
+    # 默认2分钟
+    steps = 120
     for i in range(steps):
         r = random.randint(0, 255)
         g = random.randint(0, 255)
         bc = random.randint(0, 255)
         t.color(r, g, bc)
 
-        if miao == 0:
-            fen -= 1
-            miao += 60
-        miao -= 1
-        if miao < 10:
-            w = f"0{miao}"
-        else:
-            w = str(miao)
-        q = str(fen)
+        total_seconds = steps - i
+        fen = total_seconds // 60
+        miao = total_seconds % 60
 
-        a = f"{q}:{w}"
-        time.sleep(1)
-
-        t.write(a, align="center", font=("宋体", 200))
+        miao_str = f"0{miao}" if miao < 10 else str(miao)
+        a = f"{fen}:{miao_str}"
 
         t.clear()
+        t.write(a, align="center", font=("宋体", 200))
+        t.update()
 
+        time.sleep(1)
+
+    t.clear()
     t.write("TIME UP", align="center", font=("宋体", 200))
+    t.update()
+
+# 保持窗口打开
+t.mainloop()
