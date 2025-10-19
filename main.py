@@ -2,8 +2,8 @@ import sys
 import os
 import subprocess
 import platform
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtCore import pyqtSlot
+from PyQt6.QtWidgets import QApplication, QMainWindow
 import pygame
 from mainwindow import Ui_MainWindow
 
@@ -300,4 +300,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
     mainWindow.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

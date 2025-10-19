@@ -2,9 +2,9 @@
 import platform
 import sys
 
-from PyQt5 import QtCore
-from PyQt5.QtCore import pyqtSlot, QTimer
-from PyQt5.QtWidgets import QApplication, QMainWindow,QStackedWidget
+from PyQt6 import QtCore
+from PyQt6.QtCore import pyqtSlot, QTimer
+from PyQt6.QtWidgets import QApplication, QMainWindow,QStackedWidget
 import webbrowser
 import pygame
 import os
@@ -61,11 +61,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def run_in_terminal(self, title, script_path, args=None, python_executable=None):
         """跨平台的终端运行方法"""
         try:
-            script_abs_path = os.path.abspath(script_path)
+            script_abs_path = script_path
 
-            # 检查是否存在同名二进制文件
-
-                # 如果没有指定Python解释器，使用默认的
             if python_executable is None:
                 python_executable = wherepython
             script_to_run = script_abs_path
@@ -96,9 +93,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if python_executable:
                 # 使用Python运行脚本
                 command = [python_executable, target_path]
-            else:
-                # 直接运行二进制文件
-                command = [target_path]
 
             if args:
                 if isinstance(args, list):
@@ -222,14 +216,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return None
     @pyqtSlot()
     def on_Run_clicked(self):
-        # 获取 lemon_helper 脚本所在的目录
-        helper_dir = os.path.dirname(os.path.abspath(__file__))
-        # 基于 helper_dir 构建到 unimatrix 的路径
-        wherematrix = os.path.join(helper_dir, "..", "unimatrix", "unimatrix.py")
-        wherematrix = os.path.abspath(wherematrix)  # 转换为绝对路径
-
-        print(f"Matrix路径: {wherematrix}")
-        print(f"路径是否存在: {os.path.exists(wherematrix)}")
+        wherematrix = "apps/unimatrix/unimatrix.py"
 
         enable_music_check = self.Enable_music.isChecked()
         text = self.Fonts.text()
@@ -237,7 +224,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         font = self.Font_dict.currentText()
         music = self.music.text()
         # 替换为：
-        wherematrix = os.path.abspath("../unimatrix/unimatrix.py")
+        
         args = []
 
         if color:
@@ -291,5 +278,5 @@ if __name__ == "__main__":
     mainWindow = MainWindow()
     mainWindow.show()
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
