@@ -7,8 +7,6 @@ on:
   push:
     tags:
       - v*
-    branches:
-      - main
 
   pull_request:
     branches: [ "main" ]
@@ -177,6 +175,30 @@ jobs:
         run: |
             tar -czvf EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-arm64
             tar -czvf EatRedstoneNT_for_manylinux_amd64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-amd64
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          # 获取最新标签，如果当前构建是由标签触发
+          LATEST_TAG=${{ github.ref_name }}
+          # 获取上一个标签，这里假设你使用语义化版本标签（如 v1.0.0, v1.0.1）
+          # 注意：如果这是第一个标签，可能需要调整逻辑
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 $(git rev-list --tags --skip=1 --max-count=1))
+          
+          # 如果找到了上一个标签，则生成这两个标签之间的提交记录
+          if [ -n "$PREVIOUS_TAG" ]; then
+            echo "## 提交记录 (从 $PREVIOUS_TAG 到 $LATEST_TAG)" >> $GITHUB_STEP_SUMMARY
+            git log --oneline --pretty=format:"- %s" $PREVIOUS_TAG..$LATEST_TAG >> $GITHUB_STEP_SUMMARY
+          else
+            # 如果没有找到上一个标签，则显示所有提交记录
+            echo "## 初始版本提交记录" >> $GITHUB_STEP_SUMMARY
+            git log --oneline --pretty=format:"- %s" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # 将生成的变更日志保存到环境变量中，供后续步骤使用
+          CHANGELOG=$(cat $GITHUB_STEP_SUMMARY)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       - name: Create GitHub Release & Upload Assets
         uses: softprops/action-gh-release@v1
         env:
@@ -188,6 +210,7 @@ jobs:
           body: |
             Release notes for ${{ github.ref_name }}
             运行run.sh启动
+            ${{ steps.changelog.outputs.changelog }}
           draft: false
           prerelease: false
           files: |
