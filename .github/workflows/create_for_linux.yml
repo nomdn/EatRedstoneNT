@@ -174,7 +174,7 @@ jobs:
             tar -czvf EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-arm64
             tar -czvf EatRedstoneNT_for_manylinux_amd64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-amd64
       - name: Create GitHub Release & Upload Assets
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
