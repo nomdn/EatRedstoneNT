@@ -5,7 +5,8 @@ name: Create arm64 appimage
 
 on:
   push:
-    branches: [ "main" ]
+    tags:
+      - v*
 
   pull_request:
     branches: [ "main" ]
@@ -170,8 +171,8 @@ jobs:
           path: ern-amd64
       - name: Archive File
         run: |
-            tar -czvf EatRedstoneNT_for_manylinux_aarch64.tar.gz ./ern-arm64
-            tar -czvf EatRedstoneNT_for_manylinux_aarch64.tar.gz ./ern-amd64
+            tar -czvf EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-arm64
+            tar -czvf EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-amd64
       - name: Create GitHub Release & Upload Assets
         uses: softprops/action-gh-release@v2
         env:
