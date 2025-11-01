@@ -62,7 +62,7 @@ jobs:
         python3.13_aarch64.AppImage
     - name: Create run script
       run: |
-        echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.14_aarch64.AppImage main.py' > run.sh
+        echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.13_aarch64.AppImage main.py' > run.sh
         chmod +x run.sh
         
     - name: Upload ARM64 Artifact
@@ -73,3 +73,77 @@ jobs:
           python3.13_aarch64.AppImage
           run.sh
         retention-days: 7
+  build-amd64:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install system dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+          libsdl2-2.0-0 \
+          libsdl2-image-2.0-0 \
+          libsdl2-mixer-2.0-0 \
+          libsdl2-ttf-2.0-0 \
+          libfreetype6 \
+          libportmidi0 \
+          libharfbuzz0b \
+          libxcb-xinerama0 \
+          libxcb-icccm4 \
+          libxcb-image0 \
+          libxcb-keysyms1 \
+          libxcb-render-util0 \
+          libxcb-xkb1 \
+          libxkbcommon-x11-0 \
+          libgl1 \
+          libegl1 \
+          libdbus-1-3 \
+          libssl3 \
+          libsqlite3-0
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+        
+    - name: Download AppImage tools and Python (AMD64)
+      run: |
+        # 下载 AMD64 版本的工具
+        wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+        wget https://github.com/niess/python-appimage/releases/download/python3.12/python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage
+        
+        chmod +x python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage
+        chmod +x appimagetool-x86_64.AppImage
+    
+    - name: Extract and setup Python AppImage
+      run: |
+        ./python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage --appimage-extract
+        
+        # 安装依赖
+        ./squashfs-root/AppRun -m pip install -r requirements.txt
+        
+    - name: Build AMD64 AppImage
+      run: |
+        # 使用 AMD64 版本的 appimagetool
+        ./appimagetool-x86_64.AppImage \
+          --no-appstream \
+          squashfs-root \
+          python3.12_amd64.AppImage
+        
+    - name: Create run script
+      run: |
+        echo -e '#!/bin/bash\nchmod +x python3.12_amd64.AppImage\n./python3.12_amd64.AppImage main.py' > run.sh
+        chmod +x run.sh
+        
+    - name: Upload AMD64 Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: python-appimage-amd64
+        path: |
+          python3.12_amd64.AppImage
+          run.sh
+        retention-days: 7
+    - name: ls
+      run: |
+        ls
