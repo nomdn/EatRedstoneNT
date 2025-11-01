@@ -57,6 +57,7 @@ jobs:
         ./python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage --appimage-extract
         ./squashfs-root/AppRun -m pip install -r requirements.txt
         ./appimagetool-aarch64.AppImage \
+        --no-appstream \
         squashfs-root \
         python3.13_aarch64.AppImage
     - name: Create run script
