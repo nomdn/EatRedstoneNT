@@ -10,7 +10,8 @@
 
 1 下载源码<br>
 2 pip install -r requirements.txt<br>
-3 python main.py
+3 python main.py  
+也可以去下载Release中的包
 
 ### 注意事项
 建议Python版本:cpython 3.13  
