@@ -1,0 +1,51 @@
+name: Release Python AppImages
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (必须与构建标签匹配)'
+        required: true
+      prerelease:
+        description: '是否为预发布版本'
+        type: boolean
+        default: false
+
+jobs:
+  release:
+    name: Create Multi-Arch Release
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download AMD64 Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: python-appimage-amd64
+        path: release-files/amd64
+
+    - name: Download ARM64 Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: python-appimage-arm64
+        path: release-files/arm64
+
+    - name: List release files
+      run: |
+        echo "发布文件结构:"
+        find release-files/ -type f -name "*.AppImage" -o -name "*.sh"
+        echo ""
+        echo "文件大小:"
+        ls -lh release-files/*/*
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.event.inputs.tag }}
+        name: Python AppImage Release ${{ github.event.inputs.tag }}
+        draft: false
+        prerelease: ${{ github.event.inputs.prerelease }}
+        files: |
+          release-files/**/*.AppImage
+          release-files/**/run.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
