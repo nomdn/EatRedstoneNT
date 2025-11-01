@@ -7,6 +7,8 @@ on:
   push:
     tags:
       - v*
+    branches:
+      - main
 
   pull_request:
     branches: [ "main" ]
@@ -155,6 +157,8 @@ jobs:
     needs: [build-arm64,build-amd64]
     steps:
       - uses: actions/checkout@v4
+      - with:
+          fetch-depth: 0 
       - name: Download arm64 Artifact
         uses: actions/download-artifact@v4
         with:
@@ -180,6 +184,7 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
+          generate_release_notes: true 
           body: |
             Release notes for ${{ github.ref_name }}
             运行run.sh启动
