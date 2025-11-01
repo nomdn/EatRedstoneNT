@@ -2,8 +2,7 @@ name: Build Python AppImage AMD64
 
 on:
   push:
-      tags:
-      - 'v*'
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
