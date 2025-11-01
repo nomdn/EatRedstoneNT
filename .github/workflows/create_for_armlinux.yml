@@ -5,7 +5,8 @@ name: Python application
 
 on:
   push:
-    branches: [ "main" ]
+    tags:
+      - "v*" 
   pull_request:
     branches: [ "main" ]
 
@@ -19,6 +20,39 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          # PyQt6 依赖
+          libgl1-mesa-dev \
+          libegl1-mesa-dev \
+          libxcb-xinerama0 \
+          libxcb-icccm4 \
+          libxcb-image0 \
+          libxcb-keysyms1 \
+          libxcb-render-util0 \
+          libxcb-xkb1 \
+          libxkbcommon-x11-0 \
+          libxkbcommon-dev \
+          # pygame 依赖
+          libsdl2-dev \
+          libsdl2-image-dev \
+          libsdl2-mixer-dev \
+          libsdl2-ttf-dev \
+          libfreetype6-dev \
+          pkg-config \
+          libportmidi-dev \
+          libharfbuzz-dev \
+          # 其他可能需要的依赖
+          libdbus-1-dev \
+          libssl-dev \
+          libsqlite3-dev \
+          libpq-dev \
+          # 构建工具
+          build-essential \
+          cmake \
+          ninja-build
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
