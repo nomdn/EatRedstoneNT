@@ -51,14 +51,14 @@ jobs:
     - name: Download Appimage Python And Kit
       run: |
         wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-aarch64.AppImage
-        wget https://github.com/niess/python-appimage/releases/download/python3.13/python3.13.0-cp313-cp313-manylinux2014_aarch64.AppImage
+        wget https://github.com/niess/python-appimage/releases/download/python3.13/python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage
         chmod +x python3.13.0-cp313-cp313-manylinux2014_aarch64.AppImage
         chmod +x appimagetool-aarch64.AppImage
-        ./python3.14.0-cp314-cp314-manylinux2014_aarch64.AppImage --appimage-extract
+        ./python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage --appimage-extract
         ./squashfs-root/AppRun -m pip install -r requirements.txt
         ./appimagetool-x86_64.AppImage \
         squashfs-root \
-        python3.14_aarch64.AppImage
+        python3.12_aarch64.AppImage
     - name: Create run script
       run: |
         echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.14_aarch64.AppImage main.py' > run.sh
