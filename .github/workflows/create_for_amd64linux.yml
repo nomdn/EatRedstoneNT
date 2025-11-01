@@ -64,6 +64,7 @@ jobs:
       run: |
         # 使用 AMD64 版本的 appimagetool
         ./appimagetool-x86_64.AppImage \
+          --no-appstream \
           squashfs-root \
           python3.12_amd64.AppImage
         
