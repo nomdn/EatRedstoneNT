@@ -15,40 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          # PyQt6 依赖
-          libgl1-mesa-dev \
-          libegl1-mesa-dev \
-          libxcb-xinerama0 \
-          libxcb-icccm4 \
-          libxcb-image0 \
-          libxcb-keysyms1 \
-          libxcb-render-util0 \
-          libxcb-xkb1 \
-          libxkbcommon-x11-0 \
-          libxkbcommon-dev \
-          # pygame 依赖
-          libsdl2-dev \
-          libsdl2-image-dev \
-          libsdl2-mixer-dev \
-          libsdl2-ttf-dev \
-          libfreetype6-dev \
-          pkg-config \
-          libportmidi-dev \
-          libharfbuzz-dev \
-          # 其他可能需要的依赖
-          libdbus-1-dev \
-          libssl-dev \
-          libsqlite3-dev \
-          libpq-dev \
-          # 构建工具
-          build-essential \
-          cmake \
-          ninja-build
           
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -59,14 +25,14 @@ jobs:
       run: |
         # 下载 AMD64 版本的工具
         wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
-        wget https://github.com/niess/python-appimage/releases/download/python3.14/python3.14.0-cp314-cp314-manylinux2014_x86_64.AppImage
+        wget https://github.com/niess/python-appimage/releases/download/python3.13/python3.13.8-cp313-cp313t-manylinux2014_x86_64.AppImage
         
-        chmod +x python3.14.0-cp314-cp314-manylinux2014_x86_64.AppImage
+        chmod +x python3.13.8-cp313-cp313t-manylinux2014_x86_64.AppImage
         chmod +x appimagetool-x86_64.AppImage
     
     - name: Extract and setup Python AppImage
       run: |
-        ./python3.14.0-cp314-cp314-manylinux2014_x86_64.AppImage --appimage-extract
+        ./python3.13.8-cp313-cp313t-manylinux2014_x86_64.AppImage --appimage-extract
         
         # 安装依赖
         ./squashfs-root/AppRun -m pip install -r requirements.txt
@@ -76,7 +42,7 @@ jobs:
         # 使用 AMD64 版本的 appimagetool
         ./appimagetool-x86_64.AppImage \
           squashfs-root \
-          python3.14_amd64.AppImage
+          python3.13_amd64.AppImage
         
     - name: Create run script
       run: |
