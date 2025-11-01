@@ -1,0 +1,191 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Create arm64 appimage
+
+on:
+  push:
+    branches: [ "main" ]
+
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-arm64:
+
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install system dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+          libsdl2-2.0-0 \
+          libsdl2-image-2.0-0 \
+          libsdl2-mixer-2.0-0 \
+          libsdl2-ttf-2.0-0 \
+          libfreetype6 \
+          libportmidi0 \
+          libharfbuzz0b \
+          libxcb-xinerama0 \
+          libxcb-icccm4 \
+          libxcb-image0 \
+          libxcb-keysyms1 \
+          libxcb-render-util0 \
+          libxcb-xkb1 \
+          libxkbcommon-x11-0 \
+          libgl1 \
+          libegl1 \
+          libdbus-1-3 \
+          libssl3 \
+          libsqlite3-0
+        
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Download Appimage Python And Kit
+      run: |
+        wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-aarch64.AppImage
+        wget https://github.com/niess/python-appimage/releases/download/python3.13/python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage
+        chmod +x python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage
+        chmod +x appimagetool-aarch64.AppImage
+        ./python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage --appimage-extract
+        ./squashfs-root/AppRun -m pip install -r requirements.txt
+        ./appimagetool-aarch64.AppImage \
+        --no-appstream \
+        squashfs-root \
+        python3.13_aarch64.AppImage
+    - name: Create run script
+      run: |
+        echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.13_aarch64.AppImage main.py' > run.sh
+        chmod +x run.sh
+        
+    - name: Clean Files
+      run: |
+        rm python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage
+        rm appimagetool-aarch64.AppImage
+        rm -rf squashfs-root
+    - name: Upload ARM64 Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ern-arm64
+        path: .
+        retention-days: 1
+  build-amd64:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install system dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+          libsdl2-2.0-0 \
+          libsdl2-image-2.0-0 \
+          libsdl2-mixer-2.0-0 \
+          libsdl2-ttf-2.0-0 \
+          libfreetype6 \
+          libportmidi0 \
+          libharfbuzz0b \
+          libxcb-xinerama0 \
+          libxcb-icccm4 \
+          libxcb-image0 \
+          libxcb-keysyms1 \
+          libxcb-render-util0 \
+          libxcb-xkb1 \
+          libxkbcommon-x11-0 \
+          libgl1 \
+          libegl1 \
+          libdbus-1-3 \
+          libssl3 \
+          libsqlite3-0
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+        
+    - name: Download AppImage tools and Python (AMD64)
+      run: |
+        # 下载 AMD64 版本的工具
+        wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+        wget https://github.com/niess/python-appimage/releases/download/python3.12/python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage
+        
+        chmod +x python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage
+        chmod +x appimagetool-x86_64.AppImage
+    
+    - name: Extract and setup Python AppImage
+      run: |
+        ./python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage --appimage-extract
+        
+        # 安装依赖
+        ./squashfs-root/AppRun -m pip install -r requirements.txt
+        
+    - name: Build AMD64 AppImage
+      run: |
+        # 使用 AMD64 版本的 appimagetool
+        ./appimagetool-x86_64.AppImage \
+          --no-appstream \
+          squashfs-root \
+          python3.12_amd64.AppImage
+        
+    - name: Create run script
+      run: |
+        echo -e '#!/bin/bash\nchmod +x python3.12_amd64.AppImage\n./python3.12_amd64.AppImage main.py' > run.sh
+        chmod +x run.sh
+    - name: Clean Files
+      run: |
+        rm python3.12.12-cp312-cp312-manylinux2014_x86_64.AppImage
+        rm appimagetool-x86_64.AppImage
+        rm -rf squashfs-root
+    - name: Upload AMD64 Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ern-amd64
+        path: .
+        retention-days: 1
+  pubish_release:
+    runs-on: ubuntu-latest
+    needs: [build-arm64,build-amd64]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download arm64 Artifact
+        uses: actions/download-artifact@v4
+        with:
+          # 指定要下载的构件名称
+          name: ern-arm64
+          # 指定下载到此目录，该目录会被自动创建
+          path: ern-arm64
+      - name: Download amd64 Artifact
+        uses: actions/download-artifact@v4
+        with:
+          # 指定要下载的构件名称
+          name: ern-amd64
+          # 指定下载到此目录，该目录会被自动创建
+          path: ern-amd64
+      - name: Archive File
+        run: |
+            tar -czvf EatRedstoneNT_for_manylinux_aarch64.tar.gz ./ern-arm64
+            tar -czvf EatRedstoneNT_for_manylinux_aarch64.tar.gz ./ern-amd64
+      - name: Create GitHub Release & Upload Assets
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            Release notes for ${{ github.ref_name }}
+            运行run.sh启动
+          draft: false
+          prerelease: false
+          files: |
+            EatRedstoneNT_for_manylinux_aarch64.tar.gz
+            EatRedstoneNT_for_manylinux_aarch64.tar.gz
+            
+      
