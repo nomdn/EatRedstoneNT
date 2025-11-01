@@ -86,49 +86,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print(f"启动 {title} 失败: {e}")
             return None
 
-    def _find_binary_file(self, script_path):
-        """在脚本所在目录查找同名二进制文件"""
-        try:
-            script_dir = os.path.dirname(script_path)
-            script_name = os.path.splitext(os.path.basename(script_path))[0]
-
-            # 在不同平台下可能的二进制文件扩展名
-            binary_extensions = []
-            if platform.system() == "Windows":
-                binary_extensions = ['.exe', '.bat', '.cmd', '']
-            else:
-                binary_extensions = ['', '.bin', '.sh', '.out']
-
-            # 只在脚本所在目录检查是否存在同名二进制文件
-            for ext in binary_extensions:
-                binary_path = os.path.join(script_dir, script_name + ext)
-                if os.path.exists(binary_path) and os.path.isfile(binary_path):
-                    # 在Unix系统上检查是否有执行权限
-                    if platform.system() != "Windows":
-                        if os.access(binary_path, os.X_OK):
-                            print(f"找到可执行二进制文件: {binary_path}")
-                            return binary_path
-                    else:
-                        print(f"找到二进制文件: {binary_path}")
-                        return binary_path
-
-            print(f"在目录 {script_dir} 中未找到 {script_name} 的二进制文件")
-            return None
-
-        except Exception as e:
-            print(f"查找二进制文件时出错: {e}")
-            return None
 
     def _run_windows(self, title, target_path, args=None, python_executable=None):
         """Windows平台终端运行"""
         try:
             # 构建命令
-            if python_executable:
+
                 # 使用Python运行脚本
-                command = [python_executable, target_path]
-            else:
-                # 直接运行二进制文件
-                command = [target_path]
+            command = [python_executable, target_path]
 
             if args:
                 if isinstance(args, list):
@@ -148,10 +113,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # 备用方法
             try:
                 # 构建命令行字符串
-                if python_executable:
-                    cmd_parts = [f'"{python_executable}"', f'"{target_path}"']
-                else:
-                    cmd_parts = [f'"{target_path}"']
+
+                cmd_parts = [f'"{python_executable}"', f'"{target_path}"']
 
                 if args:
                     if isinstance(args, list):
@@ -171,11 +134,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def _run_linux(self, title, target_path, args=None, python_executable=None):
         """Linux及其他平台终端运行"""
         try:
-            # 构建命令
-            if python_executable:
-                cmd_parts = [f'"{python_executable}"', f'"{target_path}"']
-            else:
-                cmd_parts = [f'"{target_path}"']
+
+            cmd_parts = [f'"{python_executable}"', f'"{target_path}"']
 
             if args:
                 if isinstance(args, list):

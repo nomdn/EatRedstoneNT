@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/home/mdn/EatRedstoneNT/EatRedstoneNT/untitled.ui'
+# Form implementation generated from reading ui file 'untitled.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1124, 669)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("./icons/biaoqing.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("../../pythonstudy/python3.8/eat-redstone-nt/icons/biaoqing.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -37,9 +37,6 @@ class Ui_MainWindow(object):
         self.HeaderCardWidget = HeaderCardWidget(parent=self.scrollAreaWidgetContents)
         self.HeaderCardWidget.setGeometry(QtCore.QRect(270, 470, 841, 191))
         self.HeaderCardWidget.setObjectName("HeaderCardWidget")
-        # title
-        self.HeaderCardWidget.setTitle("我们非常不欢迎您使用该工具箱")
-        # end
         self.TitleLabel_9 = TitleLabel(parent=self.HeaderCardWidget)
         self.TitleLabel_9.setGeometry(QtCore.QRect(120, 50, 201, 51))
         font = QtGui.QFont()
@@ -62,10 +59,6 @@ class Ui_MainWindow(object):
         self.AvatarWidget.setGeometry(QtCore.QRect(10, 50, 96, 96))
         self.AvatarWidget.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.DefaultContextMenu)
         self.AvatarWidget.setObjectName("AvatarWidget")
-        # some add
-        self.AvatarWidget.setImage("./icons/mdn.webp")
-        self.AvatarWidget.setRadius(50)
-        # end
         self.SmoothScrollArea.setWidget(self.scrollAreaWidgetContents)
         self.stackedWidget.addWidget(self.home)
         self.redstonepage = QtWidgets.QWidget()
@@ -1773,14 +1766,7 @@ class Ui_MainWindow(object):
         self.music.setGeometry(QtCore.QRect(890, 20, 131, 32))
         self.music.setObjectName("music")
         self.stackedWidget.addWidget(self.page)
-        # choosebox
-        items = ["纯神经", "伴奏神经", "完整神经"]
-        self.music.addItem("纯神经", userData="chun")
-        self.music.addItem("伴奏神经", userData="ban")
-        self.music.addItem("完整神经", userData="all ")
-        # end
-        self.stackedWidget.addWidget(self.page)
-        self.NavigationPanel = NavigationPanel(self.centralwidget)
+        self.NavigationPanel = NavigationPanel(parent=self.centralwidget)
         self.NavigationPanel.setGeometry(QtCore.QRect(0, 0, 51, 681))
         self.NavigationPanel.setStyleSheet("NavigationPanel[menu=true] {\n"
 "    background-color: rgb(243, 243, 243);\n"
@@ -1810,24 +1796,6 @@ class Ui_MainWindow(object):
 "} */")
         self.NavigationPanel.setObjectName("NavigationPanel")
         MainWindow.setCentralWidget(self.centralwidget)
-        # add page to panel
-        self.NavigationPanel.addItem(icon=FluentIcon.HOME,
-                                     onClick=lambda: self.stackedWidget.setCurrentIndex(0),
-                                     text="主页",
-                                     routeKey="home")
-        self.NavigationPanel.addItem(icon=FluentIcon.CAFE,
-                                     onClick=lambda: self.stackedWidget.setCurrentIndex(1),
-                                     text="赤石工具",
-                                     routeKey="redstone")
-        self.NavigationPanel.addItem(icon=FluentIcon.APPLICATION,
-                                     onClick=lambda: self.stackedWidget.setCurrentIndex(2),
-                                     text="实用工具",
-                                     routeKey="tool")
-        self.NavigationPanel.addItem(icon=FluentIcon.SETTING,
-                                     onClick=lambda: self.stackedWidget.setCurrentIndex(3),
-                                     text="设置",
-                                     routeKey="setting")
-        # end
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(1)
@@ -1856,8 +1824,4 @@ class Ui_MainWindow(object):
         self.TitleLabel_5.setText(_translate("MainWindow", "不常用设置"))
         self.SubtitleLabel.setText(_translate("MainWindow", "神经BGM选择"))
         self.music.setText(_translate("MainWindow", "纯神经"))
-from qfluentwidgets import AvatarWidget, CaptionLabel, ComboBox, ElevatedCardWidget, PixmapLabel, PushButton, \
-    SimpleCardWidget, SmoothScrollArea, SubtitleLabel, TitleLabel, FluentIcon, NavigationBar, HeaderCardWidget, \
-    NavigationPanel,FluentWindow
-from icons import avatar_rc
-from icons import bing_image_rc
+from qfluentwidgets import AvatarWidget, CaptionLabel, ComboBox, ElevatedCardWidget, HeaderCardWidget, NavigationPanel, PixmapLabel, PushButton, SimpleCardWidget, SmoothScrollArea, SubtitleLabel, TitleLabel
