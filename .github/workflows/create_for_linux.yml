@@ -172,7 +172,7 @@ jobs:
       - name: Archive File
         run: |
             tar -czvf EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-arm64
-            tar -czvf EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-amd64
+            tar -czvf EatRedstoneNT_for_manylinux_amd64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz ./ern-amd64
       - name: Create GitHub Release & Upload Assets
         uses: softprops/action-gh-release@v2
         env:
@@ -186,7 +186,7 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            EatRedstoneNT_for_manylinux_aarch64.tar.gz
-            EatRedstoneNT_for_manylinux_aarch64.tar.gz
+            EatRedstoneNT_for_manylinux_aarch64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz
+            EatRedstoneNT_for_manylinux_amd64_${{ github.ref_name }}-${{ github.run_id }}.tar.gz
             
       
