@@ -9,7 +9,8 @@ from mainwindow import Ui_MainWindow
 
 wherepython = sys.executable
 
-
+whereami = os.path.dirname(__file__)
+print("我在"+whereami)
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -237,7 +238,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     @pyqtSlot()
     def on_lh_run_clicked(self):
         """Lemon Helper按钮点击事件"""
-        self.run_in_terminal("Lemon Helper", "apps/lemon_helper/helper_main.py")
+        self.run_in_terminal("Lemon Helper", "apps/lemon_helper/helper_main.py",["--dir",whereami,"--dir",whereami])
 
     @pyqtSlot()
     def on_deer_pipe_clicked(self):

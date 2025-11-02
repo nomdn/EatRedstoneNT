@@ -1,3 +1,7 @@
+# 不要单独启动该文件
+# 不要单独启动该文件
+# 不要单独启动该文件
+# 在主程序启动
 
 import platform
 import sys
@@ -10,11 +14,9 @@ import pygame
 import os
 
 
+
 pygame.init()  # 初始化所有pygame模块，包括mixer
 pygame.mixer.init()  # 专门初始化混音器系统:cite[5]
-
-
-
 
 
 import subprocess
@@ -28,13 +30,7 @@ wherepython = sys.executable
 
 def play(filename):
     pygame.mixer.init()
-
-    helper_dir = os.path.dirname(os.path.abspath(__file__))
-    # 基于 helper_dir 构建到 unimatrix 的路径
-    wheresounds = os.path.join(helper_dir, "..", "sounds", f"{filename}")
-    wheresounds = os.path.abspath(wheresounds)  # 转换为绝对路径
-
-    print(wheresounds)
+    wheresounds = "./apps/sounds/"+filename
 
     pygame.mixer.music.load(wheresounds)
     pygame.mixer.music.play(loops=-1)  # 音乐将无限循环播放
@@ -216,13 +212,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return None
     @pyqtSlot()
     def on_Run_clicked(self):
-        wherematrix = "apps/unimatrix/unimatrix.py"
+        wherematrix = "./apps/unimatrix/unimatrix.py"
 
         enable_music_check = self.Enable_music.isChecked()
         text = self.Fonts.text()
         color = self.Color.currentText()
         font = self.Font_dict.currentText()
         music = self.music.text()
+        speed = self.Speed.text()
         # 替换为：
         
         args = []
@@ -230,14 +227,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if color:
             args.extend(["-c", color])
 
-        if text:
-            if font:
-                args.extend(["-l", font])
+        if font:
+            if text:
+                args.extend(["-u", text])
             else:
                 # 移除单引号，直接传递文本
-                args.extend(["-u", text])  # 去掉 f"'{text}'"
-        elif font:
-            args.extend(["-l", font])
+                args.extend(["-l", font])  # 去掉 f"'{text}'"
+        elif text:
+            args.extend(["-u", text])
+        if speed:
+            args.extend(["-s",speed])
 
         self.run_in_terminal("矩阵终端", wherematrix, args)
 
