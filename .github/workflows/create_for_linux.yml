@@ -49,23 +49,23 @@ jobs:
     - name: Download Appimage Python And Kit
       run: |
         wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-aarch64.AppImage
-        wget https://github.com/niess/python-appimage/releases/download/python3.12/python3.12.12-cp312-cp312-manylinux2014_aarch64.AppImage
-        chmod +x python3.12.12-cp312-cp312-manylinux2014_aarch64.AppImage
+        wget https://github.com/niess/python-appimage/releases/download/python3.10/python3.10.19-cp310-cp310-manylinux2014_aarch64.AppImage
+        chmod +x python3.10.19-cp310-cp310-manylinux2014_aarch64.AppImage
         chmod +x appimagetool-aarch64.AppImage
-        ./python3.12.12-cp312-cp312-manylinux2014_aarch64.AppImage --appimage-extract
+        ./python3.10.19-cp310-cp310-manylinux2014_aarch64.AppImage --appimage-extract
         ./squashfs-root/AppRun -m pip install -r requirements.txt
         ./appimagetool-aarch64.AppImage \
         --no-appstream \
         squashfs-root \
-        python3.12_aarch64.AppImage
+        python3.10_aarch64.AppImage
     - name: Create run script
       run: |
-        echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.13_aarch64.AppImage main.py' > run.sh
+        echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.10_aarch64.AppImage main.py' > run.sh
         chmod +x run.sh
         
     - name: Clean Files
       run: |
-        rm python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage
+        rm python3.10.19-cp310-cp310-manylinux2014_aarch64.AppImage
         rm appimagetool-aarch64.AppImage
         rm -rf squashfs-root
     - name: Upload ARM64 Artifact
