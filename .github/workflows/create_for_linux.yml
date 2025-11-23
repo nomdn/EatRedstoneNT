@@ -50,7 +50,7 @@ jobs:
       run: |
         wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-aarch64.AppImage
         wget https://github.com/niess/python-appimage/releases/download/python3.13/python3.13.9-cp313-cp313t-manylinux2014_aarch64.AppImage
-        chmod +x python3.13.8-cp313-cp313-manylinux2014_aarch64.AppImage
+        chmod +x python3.13.9-cp313-cp313t-manylinux2014_aarch64.AppImage
         chmod +x appimagetool-aarch64.AppImage
         ./python3.13.9-cp313-cp313t-manylinux2014_aarch64.AppImage --appimage-extract
         ./squashfs-root/AppRun -m pip install -r requirements.txt
