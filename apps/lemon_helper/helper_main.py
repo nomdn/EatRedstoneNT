@@ -13,8 +13,6 @@ import webbrowser
 import pygame
 import os
 
-
-
 pygame.init()  # 初始化所有pygame模块，包括mixer
 pygame.mixer.init()  # 专门初始化混音器系统:cite[5]
 
@@ -25,12 +23,21 @@ from lemonhelper import Ui_MainWindow  # 确保main.py在同一目录下
 
 
 wherepython = sys.executable
+whereami = None
+for i in sys.argv:
+    if i == "--dir":
+        dir_index = sys.argv.index("--dir")
+        whereami = sys.argv[dir_index+1]
 
+        break
 
+if whereami is None:
+    whereami="../.."
 
+print(whereami)
 def play(filename):
     pygame.mixer.init()
-    wheresounds = "./apps/sounds/"+filename
+    wheresounds = whereami+"/apps/sounds/"+filename
 
     pygame.mixer.music.load(wheresounds)
     pygame.mixer.music.play(loops=-1)  # 音乐将无限循环播放
@@ -44,7 +51,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)  # 初始化UI
         running = True
+        self.Run.clicked.disconnect()
 
+        self.Run.clicked.connect(self.on_Run_clicked)
 
         self.Color.currentIndexChanged.connect(lambda index: print(self.Color.currentText()))
         self.Font_dict.currentIndexChanged.connect(lambda index: print(self.Font_dict.currentText()))
@@ -212,7 +221,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return None
     @pyqtSlot()
     def on_Run_clicked(self):
-        wherematrix = "./apps/unimatrix/unimatrix.py"
+        wherematrix = whereami+"/apps/unimatrix/unimatrix.py"
 
         enable_music_check = self.Enable_music.isChecked()
         text = self.Fonts.text()

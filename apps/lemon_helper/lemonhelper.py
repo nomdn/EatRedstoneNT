@@ -432,3 +432,4 @@ class Ui_MainWindow(object):
         self.Enable_music.setText(_translate("MainWindow", "启用佳豪音乐？"))
         self.BodyLabel_6.setText(_translate("MainWindow", "TIP 不配置也能用"))
 from qfluentwidgets import BodyLabel, CheckBox, ComboBox, LineEdit, PushButton, TitleLabel
+import lemonhelper_icon

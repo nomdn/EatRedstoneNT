@@ -249,6 +249,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def on_dao_time_clicked(self):
         """倒计时按钮点击事件"""
         self.run_in_terminal("倒计时", "apps/倒计时.py")
+    @pyqtSlot()
+    def on_start_qwq_clicked(self):
+        """倒计时按钮点击事件"""
+        self.run_in_terminal("DeepSeek Code", "apps/fake_deepseek.py")
 
     @pyqtSlot()
     def on_start_ffmpeg_clicked(self):
