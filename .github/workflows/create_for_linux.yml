@@ -60,7 +60,7 @@ jobs:
         python3.10_aarch64.AppImage
     - name: Create run script
       run: |
-        echo -e '#!/bin/bash\nchmod +x python3.13_aarch64.AppImage\n./python3.10_aarch64.AppImage main.py' > run.sh
+        echo -e '#!/bin/bash\nchmod +x python3.10_aarch64.AppImage\n./python3.10_aarch64.AppImage main.py' > run.sh
         chmod +x run.sh
         
     - name: Clean Files
