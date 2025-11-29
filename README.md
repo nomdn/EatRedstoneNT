@@ -15,7 +15,7 @@
 
 ### 注意事项
 建议Python版本:cpython 3.13  
-windows用户需要额外安装curses-windows包
+windows用户需要额外安装windows-curses包
 
 
 
